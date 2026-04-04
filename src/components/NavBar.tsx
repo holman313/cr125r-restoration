@@ -1,8 +1,7 @@
 import AppBar from '@mui/material/AppBar';
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 export const TAB_IDS = [
   'my-story',
@@ -32,10 +31,8 @@ interface NavBarProps {
 export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
   return (
     <AppBar position="sticky">
-      <Toolbar>
-        <Typography variant="h6" sx={{ fontWeight: 700, letterSpacing: 1, mr: 4, whiteSpace: 'nowrap' }}>
-          1990 Honda CR125R
-        </Typography>
+      {/* Tabs row — full width on all screen sizes */}
+      <Box>
         <Tabs
           value={activeTab}
           onChange={(_, val) => onTabChange(val as TabId)}
@@ -43,12 +40,18 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
           TabIndicatorProps={{ style: { backgroundColor: '#fff' } }}
           variant="scrollable"
           scrollButtons="auto"
+          allowScrollButtonsMobile
         >
           {TAB_IDS.map((id) => (
-            <Tab key={id} value={id} label={TAB_LABELS[id]} />
+            <Tab
+              key={id}
+              value={id}
+              label={TAB_LABELS[id]}
+              sx={{ fontSize: { xs: '0.75rem', sm: '0.875rem' }, minWidth: { xs: 'unset', sm: 90 } }}
+            />
           ))}
         </Tabs>
-      </Toolbar>
+      </Box>
     </AppBar>
   );
 }
