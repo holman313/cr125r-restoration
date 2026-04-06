@@ -14,7 +14,7 @@ export default function Hero() {
       {/* Background photo */}
       <Box
         component="img"
-        src="/photos/finished/20250821_153620.jpg"
+        src="/photos/finished/banner.jpg"
         alt="1990 Honda CR125R"
         sx={{
           position: 'absolute',
