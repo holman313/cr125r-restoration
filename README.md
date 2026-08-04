@@ -61,6 +61,19 @@ public/photos/
 └── MXA/           scanned magazine pages for the MXA Review tab
 ```
 
+Phone photos run 3–4MB each, which is far more than the site needs. After dropping new files
+in, run:
+
+```bash
+npm run optimize-photos        # rewrite oversized photos in place
+npm run optimize-photos -- --dry   # report what would change, write nothing
+```
+
+It resizes to 2000px (2560px for the hero banner), re-encodes at q82 with mozjpeg, and bakes
+in EXIF orientation so nothing rotates. Magazine scans under `MXA/` keep their resolution and
+are only recompressed. Files already within budget are skipped, and a re-encode that saves
+less than 10% is discarded — so re-running is a no-op rather than a slow quality leak.
+
 To add photos to a gallery, drop the files in the matching folder and add their paths to that
 section's `photos` array in `src/components/Gallery.tsx`. Order in the array is the order shown,
 and it also drives the lightbox order. The quilted layout repeats `colPattern` across the grid
