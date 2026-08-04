@@ -37,7 +37,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar activeTab={activeTab} onTabChange={setActiveTab} />
-      <Hero />
+      <Hero compact={activeTab !== 'my-story'} />
       {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
       {activeTab === 'gallery-as-found' && <OriginalListing />}
       {activeTab === 'specs' && <Specs />}
