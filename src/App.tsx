@@ -2,6 +2,7 @@ import { useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar, { type TabId } from './components/NavBar';
+import EventBanner from './components/EventBanner';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import Specs from './components/Specs';
@@ -37,6 +38,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar activeTab={activeTab} onTabChange={setActiveTab} />
+      <EventBanner />
       <Hero compact={activeTab !== 'my-story'} />
       {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
       {activeTab === 'gallery-as-found' && <OriginalListing />}
