@@ -14,11 +14,20 @@ const QUILTED_PATTERN = [2, 1, 1, 2, 2];
 const EVEN_PATTERN = [2, 2];
 const MOBILE_PATTERN = [2, 2];
 
+/**
+ * A plain path fills a standard one-row tile. Portrait photos need `rows: 2`,
+ * or the fixed row height crops them to a thin horizontal band.
+ */
+type GalleryPhoto = string | { src: string; rows: number };
+
+const photoSrc = (photo: GalleryPhoto) => (typeof photo === 'string' ? photo : photo.src);
+const photoRows = (photo: GalleryPhoto) => (typeof photo === 'string' ? 1 : photo.rows);
+
 interface GallerySection {
   id: TabId;
   title: string;
   subtitle: string;
-  photos: string[];
+  photos: GalleryPhoto[];
   colPattern: number[];
   rowHeight: { mobile: number; desktop: number };
 }
@@ -65,13 +74,20 @@ const sections: GallerySection[] = [
     photos: [
       '/photos/finished/profile-chain-side.jpg',
       '/photos/finished/profile-pipe-side.jpg',
+      '/photos/finished/three-quarter-front.jpg',
+      '/photos/finished/three-quarter-rear.jpg',
+      { src: '/photos/finished/front-on.jpg', rows: 2 },
+      { src: '/photos/finished/rear-on.jpg', rows: 2 },
+      '/photos/finished/detail-shroud-left.jpg',
+      '/photos/finished/detail-seat-pipe.jpg',
+      '/photos/finished/detail-engine-hpp.jpg',
+      '/photos/finished/detail-engine-pipe.jpg',
+      '/photos/finished/detail-cockpit.jpg',
       '/photos/finished/20250821_153620.jpg',
       '/photos/finished/20250823_112313.jpg',
       '/photos/finished/20250823_145657.jpg',
       '/photos/finished/20251018_135845.jpg',
       '/photos/finished/IMG_0372.jpeg',
-      '/photos/finished/20250821_153547.jpg',
-      '/photos/finished/20250821_153612.jpg',
     ],
   },
 ];
@@ -91,7 +107,7 @@ export default function Gallery({ activeTab }: GalleryProps) {
   const cols = isMobile ? 2 : 4;
   const pattern = isMobile ? MOBILE_PATTERN : section.colPattern;
   const rowHeight = isMobile ? section.rowHeight.mobile : section.rowHeight.desktop;
-  const slides = section.photos.map((src) => ({ src }));
+  const slides = section.photos.map((photo) => ({ src: photoSrc(photo) }));
 
   return (
     <Box sx={{ py: 6, bgcolor: 'background.paper' }}>
@@ -103,12 +119,14 @@ export default function Gallery({ activeTab }: GalleryProps) {
           {section.subtitle}
         </Typography>
         <ImageList variant="quilted" cols={cols} gap={isMobile ? 6 : 10} rowHeight={rowHeight}>
-          {section.photos.map((src, i) => {
+          {section.photos.map((photo, i) => {
+            const src = photoSrc(photo);
             const itemCols = pattern[i % pattern.length];
             return (
               <ImageListItem
                 key={src}
                 cols={itemCols}
+                rows={photoRows(photo)}
                 onClick={() => setLightboxIndex(i)}
                 sx={{ cursor: 'pointer', '&:hover img': { opacity: 0.85, transition: 'opacity 0.2s' } }}
               >

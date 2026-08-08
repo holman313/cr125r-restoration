@@ -71,9 +71,12 @@ for await (const file of walk(PHOTOS_DIR)) {
 
   let pipeline = sharp(input).rotate(); // bake in EXIF orientation before resizing
   if (Math.max(width, height) > rule.maxDim) {
+    // Constrain both axes rather than picking one from the metadata dimensions:
+    // for an EXIF-rotated photo those are the pre-rotation values, so choosing
+    // an axis here would constrain the wrong one and leave the photo full size.
     pipeline = pipeline.resize({
-      width: width >= height ? rule.maxDim : undefined,
-      height: height > width ? rule.maxDim : undefined,
+      width: rule.maxDim,
+      height: rule.maxDim,
       fit: 'inside',
       withoutEnlargement: true,
     });
