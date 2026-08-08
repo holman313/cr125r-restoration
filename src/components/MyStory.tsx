@@ -33,7 +33,8 @@ export default function MyStory() {
             The bike made its public debut at the 125 Dream Race Show and Shine at Washougal MX,
             where it was selected by Seth Enslow as his bike of choice. Standing next to it that
             day, seeing how well it had held up — how new it still looks, how cleanly it runs —
-            was something I won't forget.
+            was something I won't forget. This August it returns to Washougal for the 15th Annual
+            125 Dream Race.
           </Typography>
           <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
             Some things are worth waiting thirty years for.
