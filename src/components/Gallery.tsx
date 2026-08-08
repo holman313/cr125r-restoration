@@ -63,13 +63,15 @@ const sections: GallerySection[] = [
     colPattern: EVEN_PATTERN,
     rowHeight: { mobile: 220, desktop: 300 },
     photos: [
-      '/photos/finished/20250821_153547.jpg',
-      '/photos/finished/20250821_153612.jpg',
+      '/photos/finished/profile-chain-side.jpg',
+      '/photos/finished/profile-pipe-side.jpg',
       '/photos/finished/20250821_153620.jpg',
       '/photos/finished/20250823_112313.jpg',
       '/photos/finished/20250823_145657.jpg',
       '/photos/finished/20251018_135845.jpg',
       '/photos/finished/IMG_0372.jpeg',
+      '/photos/finished/20250821_153547.jpg',
+      '/photos/finished/20250821_153612.jpg',
     ],
   },
 ];
