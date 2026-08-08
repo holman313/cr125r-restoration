@@ -63,6 +63,9 @@ const sections: GallerySection[] = [
       '/photos/restoration/20250719_191631.jpg',
       '/photos/restoration/20250719_191637.jpg',
       '/photos/restoration/20250727_180742.jpg',
+      { src: '/photos/restoration/pipe-refinished.jpg', rows: 2 },
+      { src: '/photos/restoration/pipe-refinished-detail.jpg', rows: 2 },
+      { src: '/photos/restoration/tires-dunlop.jpg', rows: 2 },
     ],
   },
   {
