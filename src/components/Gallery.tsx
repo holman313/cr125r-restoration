@@ -66,6 +66,7 @@ const sections: GallerySection[] = [
       { src: '/photos/restoration/pipe-refinished.jpg', rows: 2 },
       { src: '/photos/restoration/pipe-refinished-detail.jpg', rows: 2 },
       { src: '/photos/restoration/tires-dunlop.jpg', rows: 2 },
+      { src: '/photos/restoration/sprockets.jpg', rows: 2 },
     ],
   },
   {
