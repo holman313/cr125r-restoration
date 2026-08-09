@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import RunningVideo from './RunningVideo';
 
 export default function MyStory() {
   return (
@@ -40,6 +41,7 @@ export default function MyStory() {
             Some things are worth waiting thirty years for.
           </Typography>
         </Paper>
+        <RunningVideo />
       </Container>
     </Box>
   );
