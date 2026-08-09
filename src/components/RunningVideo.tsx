@@ -10,6 +10,12 @@ import Typography from '@mui/material/Typography';
  * this is a local still with a button over it, so readers who never watch pay
  * no download and hand over no data. The facade matches the player's aspect
  * ratio, so swapping one for the other doesn't shift the page.
+ *
+ * Deliberately the standard youtube.com embed domain rather than
+ * youtube-nocookie.com: the privacy domain more readily serves YouTube's
+ * "sign in to confirm you're not a bot" wall, which is worse for a visitor
+ * than the cookie it avoids. The link below the player is the escape hatch
+ * when YouTube blocks inline playback anyway, e.g. behind a VPN.
  */
 const VIDEO_ID = 'iYM3gIppzAw';
 
@@ -43,7 +49,7 @@ export default function RunningVideo() {
         {playing ? (
           <Box
             component="iframe"
-            src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?autoplay=1&rel=0&playsinline=1`}
+            src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&playsinline=1`}
             title="1990 Honda CR125R running"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -102,6 +108,18 @@ export default function RunningVideo() {
           </Box>
         )}
       </Box>
+
+      <Typography variant="body2" sx={{ mt: 1.5, textAlign: 'center' }}>
+        <Box
+          component="a"
+          href={`https://www.youtube.com/shorts/${VIDEO_ID}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+        >
+          Watch on YouTube ↗
+        </Box>
+      </Typography>
     </Box>
   );
 }
