@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import RunningVideo from './RunningVideo';
+import ShareQr from './ShareQr';
 
 export default function MyStory() {
   return (
@@ -42,6 +43,7 @@ export default function MyStory() {
           </Typography>
         </Paper>
         <RunningVideo />
+        <ShareQr />
       </Container>
     </Box>
   );
