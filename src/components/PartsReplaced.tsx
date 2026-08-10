@@ -24,7 +24,8 @@ const groups: { heading: string; body: ReactNode }[] = [
   },
   {
     heading: 'Suspension',
-    body: 'Full front and rear rebuild by EVO Oregon. New linkage and swingarm bearings.',
+    body:
+      'Full front and rear rebuild by EVO Oregon. New steering stem, linkage, and swingarm bearings.',
   },
   { heading: 'Drivetrain', body: 'New chain and sprockets.' },
   { heading: 'Wheels & brakes', body: 'New tires, tubes, wheel bearings, and brake pads.' },
