@@ -8,6 +8,7 @@ import Gallery from './components/Gallery';
 import Specs from './components/Specs';
 import MyStory from './components/MyStory';
 import OriginalListing from './components/OriginalListing';
+import PartsReplaced from './components/PartsReplaced';
 import MXAReview from './components/MXAReview';
 
 const theme = createTheme({
@@ -42,6 +43,7 @@ export default function App() {
       <Hero compact={activeTab !== 'my-story'} />
       {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
       {activeTab === 'gallery-as-found' && <OriginalListing />}
+      {activeTab === 'gallery-restoration' && <PartsReplaced />}
       {activeTab === 'specs' && <Specs />}
       {activeTab === 'my-story' && <MyStory />}
       {activeTab === 'mxa-review' && <MXAReview />}
