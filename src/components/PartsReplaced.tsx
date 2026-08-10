@@ -17,7 +17,11 @@ const groups: { heading: string; body: ReactNode }[] = [
     ),
   },
   { heading: 'Engine', body: 'Boyesen reed valve, new carb gaskets.' },
-  { heading: 'Exhaust', body: 'FMF pipe with a Pro Circuit Shorty silencer.' },
+  {
+    heading: 'Exhaust',
+    body:
+      'FMF pipe with a Pro Circuit Shorty silencer. The original pipe is in great shape — just set aside for some FMF bling.',
+  },
   {
     heading: 'Suspension',
     body: 'Full front and rear rebuild by EVO Oregon. New linkage and swingarm bearings.',
