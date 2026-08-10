@@ -22,13 +22,13 @@ const groups: { heading: string; body: ReactNode }[] = [
     body:
       'FMF pipe with a Pro Circuit Shorty silencer. The original pipe is in great shape — just set aside for some FMF bling.',
   },
+  { heading: 'Suspension', body: 'Full front and rear rebuild by EVO Oregon.' },
   {
-    heading: 'Suspension',
-    body:
-      'Full front and rear rebuild by EVO Oregon. New steering stem, linkage, and swingarm bearings.',
+    heading: 'Bearings',
+    body: 'All new — steering stem, linkage, swingarm, and wheel bearings.',
   },
   { heading: 'Drivetrain', body: 'New chain and sprockets.' },
-  { heading: 'Wheels & brakes', body: 'New tires, tubes, wheel bearings, and brake pads.' },
+  { heading: 'Wheels & brakes', body: 'New tires, tubes, and brake pads.' },
   { heading: 'Controls', body: 'ODI grips.' },
 ];
 
