@@ -16,7 +16,7 @@ const groups: { heading: string; body: ReactNode }[] = [
       </>
     ),
   },
-  { heading: 'Engine', body: 'Boyesen reed valve, new carb gaskets.' },
+  { heading: 'Engine', body: 'Boyesen reeds, new carb gaskets.' },
   {
     heading: 'Exhaust',
     body:
