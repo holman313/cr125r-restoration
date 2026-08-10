@@ -41,9 +41,9 @@ export default function App() {
       <NavBar activeTab={activeTab} onTabChange={setActiveTab} />
       <EventBanner />
       <Hero compact={activeTab !== 'my-story'} />
+      {activeTab === 'gallery-restoration' && <PartsReplaced />}
       {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
       {activeTab === 'gallery-as-found' && <OriginalListing />}
-      {activeTab === 'gallery-restoration' && <PartsReplaced />}
       {activeTab === 'specs' && <Specs />}
       {activeTab === 'my-story' && <MyStory />}
       {activeTab === 'mxa-review' && <MXAReview />}
