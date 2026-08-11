@@ -8,7 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
-import type { TabId } from './NavBar';
+import type { TabId } from '../tabs';
 
 const QUILTED_PATTERN = [2, 1, 1, 2, 2];
 const EVEN_PATTERN = [2, 2];

@@ -4,38 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-
-export const TAB_IDS = [
-  'my-story',
-  'gallery-as-found',
-  'gallery-restoration',
-  'gallery-finished',
-  'specs',
-  'mxa-review',
-] as const;
-
-export type TabId = typeof TAB_IDS[number];
-
-const TAB_LABELS: Record<TabId, string> = {
-  'my-story': 'My Story',
-  'gallery-as-found': 'As Found',
-  'gallery-restoration': 'Restoration',
-  'gallery-finished': 'After Restoration',
-  'specs': 'Specs',
-  'mxa-review': 'MXA Review',
-};
-
-// Phone screens fit roughly three full-length labels, which pushes Specs and
-// MXA Review off-screen behind a scroll arrow. Shorter labels keep every tab
-// reachable without scrolling.
-const TAB_LABELS_SHORT: Record<TabId, string> = {
-  'my-story': 'Story',
-  'gallery-as-found': 'As Found',
-  'gallery-restoration': 'Resto',
-  'gallery-finished': 'Finished',
-  'specs': 'Specs',
-  'mxa-review': 'MXA',
-};
+import { TAB_IDS, TAB_LABELS, TAB_LABELS_SHORT, type TabId } from '../tabs';
 
 interface NavBarProps {
   activeTab: TabId;

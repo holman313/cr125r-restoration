@@ -22,8 +22,13 @@ const EVENT_ENDS = new Date('2026-08-31T00:00:00-07:00');
 
 const EVENT_URL = 'https://www.125dreamrace.com/';
 
+// Decided at module load rather than during render: whether the banner shows
+// is a per-session fact, not a per-render one, and reading Date.now() inside
+// the component would be an impure call from React's rules-of-hooks perspective.
+const SHOW_ON_THIS_LOAD = SHOW_EVENT_BANNER && Date.now() <= EVENT_ENDS.getTime();
+
 export default function EventBanner() {
-  if (!SHOW_EVENT_BANNER || Date.now() > EVENT_ENDS.getTime()) return null;
+  if (!SHOW_ON_THIS_LOAD) return null;
 
   return (
     <Box
