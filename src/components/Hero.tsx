@@ -82,18 +82,6 @@ export default function Hero({ compact = false }: HeroProps) {
             </>
           )}
         </Typography>
-        {!compact && (
-          <Typography
-            sx={{
-              color: 'rgba(255,255,255,0.7)',
-              mt: 2,
-              fontWeight: 400,
-              fontSize: { xs: '0.85rem', sm: '1rem', md: '1.25rem' },
-            }}
-          >
-            125cc · Two-Stroke · Honda Power Port
-          </Typography>
-        )}
       </Box>
     </Box>
   );
