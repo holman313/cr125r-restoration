@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import LeaveNote from './LeaveNote';
 import RunningVideo from './RunningVideo';
 import ShareQr from './ShareQr';
 import ThenAndNew from './ThenAndNew';
@@ -45,6 +46,7 @@ export default function MyStory() {
         </Paper>
         <ThenAndNew />
         <RunningVideo />
+        <LeaveNote />
         <ShareQr />
       </Container>
     </Box>
