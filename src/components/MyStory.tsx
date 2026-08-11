@@ -4,6 +4,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import RunningVideo from './RunningVideo';
 import ShareQr from './ShareQr';
+import ThenAndNew from './ThenAndNew';
 
 export default function MyStory() {
   return (
@@ -42,6 +43,7 @@ export default function MyStory() {
             Some things are worth waiting thirty years for.
           </Typography>
         </Paper>
+        <ThenAndNew />
         <RunningVideo />
         <ShareQr />
       </Container>
