@@ -4,7 +4,6 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import LeaveNote from './LeaveNote';
 import RunningVideo from './RunningVideo';
-import ShareQr from './ShareQr';
 import ThenAndNew from './ThenAndNew';
 
 export default function MyStory() {
@@ -47,7 +46,6 @@ export default function MyStory() {
         <ThenAndNew />
         <RunningVideo />
         <LeaveNote />
-        <ShareQr />
       </Container>
     </Box>
   );
