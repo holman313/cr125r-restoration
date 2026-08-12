@@ -74,8 +74,8 @@ export default function LeaveNote() {
         Leave a Note
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        Say hi, share a memory of a 1990 CR, or ask a question. Notes go straight to the owner
-        — nothing shows on the site.
+        Like what you see? Leave a comment and let me know. It's appreciated and builds energy
+        for the next restoration project.
       </Typography>
 
       {status === 'sent' ? (
