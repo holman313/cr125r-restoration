@@ -74,7 +74,7 @@ export default function LeaveNote() {
         Leave a Note
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
-        Like what you see? Leave a comment and let me know. It's appreciated and builds energy
+        Like what you see? Leave a comment and let me know. it's appreciated and builds energy
         for the next restoration project.
       </Typography>
 
