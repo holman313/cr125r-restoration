@@ -80,7 +80,7 @@ export default function LeaveNote() {
 
       {status === 'sent' ? (
         <Alert severity="success" variant="outlined" sx={{ maxWidth: 520 }}>
-          Thanks — your note is in.
+          Thank you.
         </Alert>
       ) : (
         <Box
