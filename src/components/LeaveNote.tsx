@@ -25,13 +25,16 @@ const COMMENTS_URL = import.meta.env.VITE_COMMENTS_URL as string | undefined;
 type Status = 'idle' | 'submitting' | 'sent' | 'error';
 
 export default function LeaveNote() {
-  if (!COMMENTS_URL) return null;
-
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [website, setWebsite] = useState(''); // honeypot; humans leave this blank
   const [status, setStatus] = useState<Status>('idle');
+
+  // The URL is a compile-time constant, but the null check has to run after
+  // the hooks are called — react-hooks/rules-of-hooks require unconditional
+  // hook order.
+  if (!COMMENTS_URL) return null;
 
   const disabled = status === 'submitting';
 

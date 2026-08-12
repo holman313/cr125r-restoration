@@ -10,6 +10,7 @@ import MyStory from './components/MyStory';
 import OriginalListing from './components/OriginalListing';
 import PartsReplaced from './components/PartsReplaced';
 import MXAReview from './components/MXAReview';
+import ShowGallery from './components/ShowGallery';
 import { slugToTab, tabToSlug, type TabId } from './tabs';
 
 const theme = createTheme({
@@ -87,6 +88,7 @@ export default function App() {
       {activeTab === 'specs' && <Specs />}
       {activeTab === 'my-story' && <MyStory />}
       {activeTab === 'mxa-review' && <MXAReview />}
+      {activeTab === 'show-gallery' && <ShowGallery />}
     </ThemeProvider>
   );
 }
