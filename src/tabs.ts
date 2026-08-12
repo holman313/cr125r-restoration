@@ -9,12 +9,25 @@
 
 /**
  * "At the Show" is a live-updating gallery of visitor submissions during the
- * event weekend. Gated behind an env var so it only appears while it's
- * running — flip VITE_SHOW_GALLERY to "true" in Vercel Saturday morning,
- * unset it Sunday night. The rest of the tab surface is unchanged in both
- * states.
+ * event weekend. Auto-opens Saturday morning and auto-closes Monday
+ * morning — same pattern as the EventBanner date guard, so nothing needs
+ * flipping on show day.
+ *
+ * VITE_SHOW_GALLERY is an optional override: set to "true" to force the
+ * tab on (e.g. to test before the window opens), "false" to force it off
+ * (kill switch during the show). Unset means "use the dates."
+ *
+ * Decided at module load, matching the EventBanner: whether the tab exists
+ * is a per-session fact, not per-render, and reading Date.now() inside a
+ * component would trip react-hooks/purity.
  */
-const SHOW_GALLERY_ENABLED = import.meta.env.VITE_SHOW_GALLERY === 'true';
+const SHOW_WINDOW_START = new Date('2026-08-29T00:00:00-07:00');
+const SHOW_WINDOW_END = new Date('2026-08-31T00:00:00-07:00');
+const OVERRIDE = import.meta.env.VITE_SHOW_GALLERY as string | undefined;
+const NOW = Date.now();
+const IN_WINDOW = NOW >= SHOW_WINDOW_START.getTime() && NOW < SHOW_WINDOW_END.getTime();
+const SHOW_GALLERY_ENABLED =
+  OVERRIDE === 'true' ? true : OVERRIDE === 'false' ? false : IN_WINDOW;
 
 const BASE_TAB_IDS = [
   'my-story',
