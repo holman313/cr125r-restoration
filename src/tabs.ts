@@ -45,6 +45,17 @@ export const TAB_IDS: readonly TabId[] = SHOW_GALLERY_ENABLED
   ? BASE_TAB_IDS
   : BASE_TAB_IDS.filter((id) => id !== 'show-gallery');
 
+/**
+ * The tabs the NavBar renders. Deliberately excludes show-gallery even when
+ * the show window is open — that tab is surfaced through a "Become Famous"
+ * hero CTA instead, keeping the nav at 6 tabs on phones during the event.
+ * The gallery is still URL-routable via #at-the-show; only its nav chip is
+ * suppressed.
+ */
+export const NAV_TAB_IDS: readonly TabId[] = TAB_IDS.filter((id) => id !== 'show-gallery');
+
+export { SHOW_GALLERY_ENABLED };
+
 export const TAB_LABELS: Record<TabId, string> = {
   'my-story': 'My Story',
   'gallery-as-found': 'As Found',

@@ -4,7 +4,7 @@ import Tabs from '@mui/material/Tabs';
 import Box from '@mui/material/Box';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { TAB_IDS, TAB_LABELS, TAB_LABELS_SHORT, type TabId } from '../tabs';
+import { NAV_TAB_IDS, TAB_LABELS, TAB_LABELS_SHORT, type TabId } from '../tabs';
 
 interface NavBarProps {
   activeTab: TabId;
@@ -20,8 +20,11 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
     <AppBar position="sticky">
       {/* Tabs row — full width on all screen sizes */}
       <Box>
+        {/* value={false} when the active tab isn't in the nav (i.e. the
+            hero-CTA-driven show-gallery view). MUI otherwise warns that the
+            value doesn't match any Tab child. */}
         <Tabs
-          value={activeTab}
+          value={NAV_TAB_IDS.includes(activeTab) ? activeTab : false}
           onChange={(_, val) => onTabChange(val as TabId)}
           textColor="inherit"
           TabIndicatorProps={{ style: { backgroundColor: '#fff' } }}
@@ -29,7 +32,7 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
           scrollButtons="auto"
           allowScrollButtonsMobile
         >
-          {TAB_IDS.map((id) => (
+          {NAV_TAB_IDS.map((id) => (
             <Tab
               key={id}
               value={id}
