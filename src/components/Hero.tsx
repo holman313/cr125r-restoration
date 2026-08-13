@@ -10,16 +10,18 @@ interface HeroProps {
   themeMode: ThemeMode;
 }
 
+// The show ends late Aug 30 Pacific; after that the "SHOWING AT" tense
+// stops making sense and we flip to "SHOWN AT". Evaluated once at module
+// load so the check doesn't run every render (react-hooks/purity).
+const SHOW_ENDS = new Date('2026-08-31T00:00:00-07:00');
+const EVENT_IN_PAST = Date.now() >= SHOW_ENDS.getTime();
+
 export default function Hero({ compact = false, themeMode }: HeroProps) {
   const showCta = SHOW_GALLERY_ENABLED;
   const nineties = themeMode === 'nineties';
 
-  // 90s mode swaps the red gradient for a stronger orange/red pulled from the
-  // era's motocross posters, and the title/CTA lean on the display-type stack
-  // set in the MUI theme. In default mode the overlay stays the current red-
-  // to-transparent it always was.
   const overlay = nineties
-    ? 'linear-gradient(to right, rgba(233,21,42,0.55) 0%, rgba(20,20,20,0.35) 55%, rgba(20,20,20,0.05) 100%)'
+    ? 'linear-gradient(to right, rgba(234,27,44,0.55) 0%, rgba(20,20,20,0.35) 55%, rgba(20,20,20,0.05) 100%)'
     : 'linear-gradient(to right, rgba(180,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 100%)';
 
   return (
@@ -53,6 +55,59 @@ export default function Hero({ compact = false, themeMode }: HeroProps) {
           background: overlay,
         }}
       />
+
+      {/* Event-attribution mark — top-right of the hero, always visible.
+          Language flips to past tense after the show window closes.
+          Only on the full hero; the compact hero on other tabs shares its
+          right side with the "Become Famous" CTA and would be too crowded. */}
+      {!compact && (
+        <Box
+          component="a"
+          href="https://www.125dreamrace.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`${EVENT_IN_PAST ? 'Shown' : 'Showing'} at the 125 Dream Race`}
+          sx={{
+            position: 'absolute',
+            top: { xs: 12, md: 20 },
+            right: { xs: 12, md: 20 },
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1.25,
+            bgcolor: 'rgba(255,255,255,0.94)',
+            border: '2px solid #141414',
+            borderRadius: 1,
+            px: 1.25,
+            py: 0.75,
+            textDecoration: 'none',
+            color: '#141414',
+            boxShadow: '0 4px 14px rgba(0,0,0,0.35)',
+            '&:hover': { bgcolor: '#fff' },
+            transition: 'background-color 0.15s ease',
+            zIndex: 2,
+          }}
+        >
+          <Box
+            component="span"
+            sx={{
+              fontFamily:
+                '"Impact", "Haettenschweiler", "Franklin Gothic Bold", "Arial Black", sans-serif',
+              fontSize: { xs: '0.6rem', md: '0.72rem' },
+              letterSpacing: '0.1em',
+              lineHeight: 1,
+              textTransform: 'uppercase',
+            }}
+          >
+            {EVENT_IN_PAST ? 'Shown at' : 'Showing at'}
+          </Box>
+          <Box
+            component="img"
+            src="/images/125dr-logo.jpg"
+            alt="125 Dream Race"
+            sx={{ height: { xs: 30, md: 38 }, width: 'auto', display: 'block' }}
+          />
+        </Box>
+      )}
 
       <Box
         sx={{
@@ -90,7 +145,7 @@ export default function Hero({ compact = false, themeMode }: HeroProps) {
               color: '#fff',
               lineHeight: 1.05,
               textShadow: nineties
-                ? '3px 3px 0 rgba(20,20,20,0.7), 0 2px 12px rgba(0,0,0,0.6)'
+                ? '3px 3px 0 rgba(20,20,20,0.85), 0 2px 12px rgba(0,0,0,0.6)'
                 : '0 2px 12px rgba(0,0,0,0.6)',
               fontFamily: nineties
                 ? '"Impact", "Haettenschweiler", "Franklin Gothic Bold", "Arial Black", sans-serif'
@@ -172,57 +227,6 @@ export default function Hero({ compact = false, themeMode }: HeroProps) {
           </Button>
         )}
       </Box>
-
-      {/* Event-attribution mark in 90s mode: bottom-right of the hero, plain
-          "showing at" credit rather than a decorative element. Only appears
-          in 90s mode; hidden by default so the default hero stays clean. */}
-      {nineties && !compact && (
-        <Box
-          component="a"
-          href="https://www.125dreamrace.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Showing at the 125 Dream Race"
-          sx={{
-            position: 'absolute',
-            right: { xs: 12, md: 20 },
-            bottom: { xs: 12, md: 20 },
-            display: 'flex',
-            alignItems: 'center',
-            gap: 1.25,
-            bgcolor: 'rgba(251,243,216,0.92)',
-            border: '2px solid #141414',
-            borderRadius: 1,
-            px: 1.25,
-            py: 0.75,
-            textDecoration: 'none',
-            color: '#141414',
-            boxShadow: '0 6px 20px rgba(0,0,0,0.35)',
-            '&:hover': { bgcolor: '#FBF3D8' },
-            transition: 'background-color 0.15s ease',
-          }}
-        >
-          <Box
-            component="span"
-            sx={{
-              fontFamily:
-                '"Impact", "Haettenschweiler", "Franklin Gothic Bold", "Arial Black", sans-serif',
-              fontSize: { xs: '0.65rem', md: '0.75rem' },
-              letterSpacing: '0.1em',
-              lineHeight: 1,
-              textTransform: 'uppercase',
-            }}
-          >
-            Showing at
-          </Box>
-          <Box
-            component="img"
-            src="/images/125dr-logo.jpg"
-            alt="125 Dream Race"
-            sx={{ height: { xs: 32, md: 40 }, width: 'auto', display: 'block' }}
-          />
-        </Box>
-      )}
     </Box>
   );
 }

@@ -23,31 +23,34 @@ export const defaultTheme: Theme = createTheme({
 });
 
 /**
- * Opt-in "take me back to the 90s" mode. Draws its palette from the era's
- * motocross poster and MTV-parody aesthetic — red / royal blue / yellow on
- * cream, chunky compressed display type on headings — without reproducing
- * anyone's trademarked marks. The 125 Dream Race logo appears as a
- * standard event-attribution mark, not a decorative element.
+ * "Take me back to the 90s" mode — loud, saturated, unashamedly poster.
  *
- * Impact is a system font on every mainstream OS, so no font loading needed
- * for the heading treatment.
+ * Background is the exact bright poster yellow from the 125 DR mark, and
+ * cards float on top in white with a heavy black border and a chunky
+ * offset shadow — the punk-sticker/silkscreen effect that reads instantly
+ * as period. Palette is drawn from the same poster: red / royal blue /
+ * yellow on black outlines. No trademarked marks are reproduced.
+ *
+ * Impact is a system font on every mainstream OS, so no font loading is
+ * needed for the heading treatment.
  */
 export const ninetiesTheme: Theme = createTheme({
   palette: {
     mode: 'light',
-    primary: { main: '#E9152A' },
+    primary: { main: '#EA1B2C' },
     secondary: { main: '#0033A0' },
-    error: { main: '#E9152A' },
-    warning: { main: '#F2B90A' },
+    error: { main: '#EA1B2C' },
+    warning: { main: '#0033A0' },
+    info: { main: '#0033A0' },
     background: {
-      default: '#FBF3D8',
+      default: '#FFED00',
       paper: '#FFFFFF',
     },
     text: {
-      primary: '#141414',
-      secondary: '#3A3A3A',
+      primary: '#0B0B0B',
+      secondary: '#2A2A2A',
     },
-    divider: '#141414',
+    divider: '#0B0B0B',
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -78,8 +81,18 @@ export const ninetiesTheme: Theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          border: '2px solid #141414',
+          border: '3px solid #0B0B0B',
           borderRadius: 6,
+          boxShadow: '6px 6px 0 #0B0B0B',
+        },
+      },
+    },
+    MuiPaper: {
+      styleOverrides: {
+        outlined: {
+          border: '3px solid #0B0B0B',
+          borderRadius: 6,
+          boxShadow: '6px 6px 0 #0B0B0B',
         },
       },
     },
@@ -92,19 +105,37 @@ export const ninetiesTheme: Theme = createTheme({
           letterSpacing: '0.08em',
           textTransform: 'uppercase',
         },
+        contained: {
+          border: '2px solid #0B0B0B',
+          boxShadow: '4px 4px 0 #0B0B0B',
+          '&:hover': { boxShadow: '4px 4px 0 #0B0B0B' },
+        },
+        outlined: {
+          borderWidth: 2,
+          '&:hover': { borderWidth: 2 },
+        },
       },
     },
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: '#141414',
+          backgroundColor: '#0B0B0B',
+          borderBottom: '3px solid #FFED00',
         },
       },
     },
     MuiAlert: {
       styleOverrides: {
         outlined: {
-          borderWidth: 2,
+          borderWidth: 3,
+          fontWeight: 700,
+        },
+      },
+    },
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& .MuiOutlinedInput-notchedOutline': { borderWidth: 2, borderColor: '#0B0B0B' },
         },
       },
     },

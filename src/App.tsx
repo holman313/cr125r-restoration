@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 import NavBar from './components/NavBar';
-import EventBanner from './components/EventBanner';
 import Hero from './components/Hero';
 import Gallery from './components/Gallery';
 import Specs from './components/Specs';
@@ -93,7 +92,6 @@ export default function App() {
         themeMode={themeMode}
         onThemeToggle={toggleTheme}
       />
-      <EventBanner />
       <Hero compact={activeTab !== 'my-story'} themeMode={themeMode} />
       {activeTab === 'gallery-restoration' && <PartsReplaced />}
       {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
