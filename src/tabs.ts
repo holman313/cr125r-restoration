@@ -63,7 +63,7 @@ export const TAB_LABELS: Record<TabId, string> = {
   'gallery-finished': 'After Restoration',
   specs: 'Specs',
   'mxa-review': 'MXA Review',
-  'show-gallery': 'At the Show',
+  'show-gallery': 'Selfie Time',
 };
 
 /**
@@ -78,7 +78,7 @@ export const TAB_LABELS_SHORT: Record<TabId, string> = {
   'gallery-finished': 'Finished',
   specs: 'Specs',
   'mxa-review': 'MXA',
-  'show-gallery': 'Show',
+  'show-gallery': 'Selfie',
 };
 
 /**
@@ -93,7 +93,7 @@ export const TAB_SLUGS: Record<TabId, string> = {
   'gallery-finished': 'after-restoration',
   specs: 'specs',
   'mxa-review': 'mxa-review',
-  'show-gallery': 'at-the-show',
+  'show-gallery': 'selfie-time',
 };
 
 const SLUG_TO_TAB: Record<string, TabId> = Object.fromEntries(

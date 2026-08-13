@@ -147,7 +147,7 @@ export default function ShowGallery() {
     <Box sx={{ py: 6, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
         <Typography variant="h4" fontWeight={700} gutterBottom>
-          At the Show
+          Selfie Time
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 620 }}>
           Snap a photo with the bike, add a note, and it lands here for the rest of the weekend.
