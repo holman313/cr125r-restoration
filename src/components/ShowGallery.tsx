@@ -150,7 +150,8 @@ export default function ShowGallery() {
           Selfie Time
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 620 }}>
-          Snap a photo with the bike, add a note, and it lands here for the rest of the weekend.
+          Snap a photo with the bike, add a note. It lands here in our gallery dedicated to the
+          125 Dream Race.
         </Typography>
 
         <Alert severity="info" variant="outlined" sx={{ mb: 4, maxWidth: 620 }}>
