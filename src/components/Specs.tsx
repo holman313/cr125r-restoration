@@ -7,16 +7,6 @@ import Typography from '@mui/material/Typography';
 
 const specGroups: { heading: string; rows: [string, string][] }[] = [
   {
-    heading: 'Overview',
-    rows: [
-      ['Year', '1990'],
-      ['Make', 'Honda'],
-      ['Model', 'CR125R'],
-      ['Class', 'Motocross / 125cc'],
-      ['Color', 'Honda Red'],
-    ],
-  },
-  {
     heading: 'Engine',
     rows: [
       ['Type', '125cc two-stroke single'],
