@@ -2,27 +2,20 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { SHOW_GALLERY_ENABLED, tabToSlug } from '../tabs';
-import type { ThemeMode } from '../theme';
 
 interface HeroProps {
   /** Shrink to a slim banner so the section below starts above the fold. */
   compact?: boolean;
-  themeMode: ThemeMode;
 }
 
-// The show ends late Aug 30 Pacific; after that the "SHOWING AT" tense
-// stops making sense and we flip to "SHOWN AT". Evaluated once at module
-// load so the check doesn't run every render (react-hooks/purity).
+// The show ends late Aug 30 Pacific; after that the "SHOWING AT" tense stops
+// making sense and we flip to "SHOWN AT". Evaluated once at module load so
+// the check doesn't run every render (react-hooks/purity).
 const SHOW_ENDS = new Date('2026-08-31T00:00:00-07:00');
 const EVENT_IN_PAST = Date.now() >= SHOW_ENDS.getTime();
 
-export default function Hero({ compact = false, themeMode }: HeroProps) {
+export default function Hero({ compact = false }: HeroProps) {
   const showCta = SHOW_GALLERY_ENABLED;
-  const nineties = themeMode === 'nineties';
-
-  const overlay = nineties
-    ? 'linear-gradient(to right, rgba(234,27,44,0.55) 0%, rgba(20,20,20,0.35) 55%, rgba(20,20,20,0.05) 100%)'
-    : 'linear-gradient(to right, rgba(180,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 100%)';
 
   return (
     <Box
@@ -52,7 +45,8 @@ export default function Hero({ compact = false, themeMode }: HeroProps) {
         sx={{
           position: 'absolute',
           inset: 0,
-          background: overlay,
+          background:
+            'linear-gradient(to right, rgba(180,0,0,0.75) 0%, rgba(0,0,0,0.55) 50%, rgba(0,0,0,0.2) 100%)',
         }}
       />
 
@@ -125,33 +119,17 @@ export default function Hero({ compact = false, themeMode }: HeroProps) {
           {!compact && (
             <Typography
               variant="overline"
-              sx={{
-                color: 'rgba(255,255,255,0.85)',
-                letterSpacing: 4,
-                mb: 1,
-                display: 'block',
-                fontFamily: nineties
-                  ? '"Impact", "Haettenschweiler", "Franklin Gothic Bold", "Arial Black", sans-serif'
-                  : undefined,
-                fontWeight: nineties ? 900 : undefined,
-              }}
+              sx={{ color: 'rgba(255,255,255,0.75)', letterSpacing: 4, mb: 1, display: 'block' }}
             >
               Classic Restoration
             </Typography>
           )}
           <Typography
-            fontWeight={nineties ? 900 : 800}
+            fontWeight={800}
             sx={{
               color: '#fff',
-              lineHeight: 1.05,
-              textShadow: nineties
-                ? '3px 3px 0 rgba(20,20,20,0.85), 0 2px 12px rgba(0,0,0,0.6)'
-                : '0 2px 12px rgba(0,0,0,0.6)',
-              fontFamily: nineties
-                ? '"Impact", "Haettenschweiler", "Franklin Gothic Bold", "Arial Black", sans-serif'
-                : undefined,
-              letterSpacing: nineties ? '0.02em' : undefined,
-              textTransform: nineties ? 'uppercase' : undefined,
+              lineHeight: 1.1,
+              textShadow: '0 2px 12px rgba(0,0,0,0.6)',
               fontSize: compact
                 ? { xs: '1.1rem', sm: '1.5rem', md: '2rem' }
                 : { xs: '2.2rem', sm: '3rem', md: '3.75rem' },
