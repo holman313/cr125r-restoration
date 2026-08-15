@@ -15,32 +15,38 @@ export default function MyStory() {
         </Typography>
         <Paper variant="outlined" sx={{ p: 4 }}>
           <Typography variant="body1" paragraph>
-            At fourteen, I raced a 1990 Honda CR125 — a machine that didn't just introduce me to
-            motocross, it defined my early years in the sport. The trophies I won on that bike still
-            sit on my shelf, and for decades I carried a quiet promise to myself: if I ever found
-            one in decent shape, I wouldn't let it pass.
+            At fourteen, my father surprised me with a 1990 Honda CR125 — the last one on the
+            showroom floor as the '91s were coming in. Rolling it out of that showroom was
+            life-changing. The trophies I won on it still sit on my shelf. So does the memory of
+            breaking my collarbone at Washougal MX — first place, last lap, bad line over a double
+            in what used to be the catcher's mitt after the Chuck Sun jump.
           </Typography>
           <Typography variant="body1" paragraph>
-            That moment came in July 2025. A remarkably low-hour one surfaced on Facebook
-            Marketplace — all original, with just a handful of rides on it before being stored in a
-            shop for over 32 years. It came home with me that same day. True to its reputation, it
+            I always told myself that if I ever came across another one in decent shape, I wouldn't
+            let it go.
+          </Typography>
+          <Typography variant="body1" paragraph>
+            That happened in July 2025. A low-hour, all-original CR125 showed up on Facebook
+            Marketplace — a handful of rides on it before it sat in a shop for 32 years. The
+            pictures were rough; it hadn't seen soap and water in a long time, and I couldn't tell
+            what I was really looking at. We went back and forth on price. He turned down my final
+            offer. The next day a message came in: "If you come get it today, you can have it." I
+            told him I was on my way. Pulling up to that Honda orange in his driveway, walking
+            around it and seeing how original it really was, I knew I'd gotten it for a steal. It
             fired on the first kick.
           </Typography>
           <Typography variant="body1" paragraph>
-            The restoration was less of an overhaul and more of a careful revival — addressing the
-            small things that inevitably suffer after three decades of storage. Every hour spent on
-            it brought back a flood of memories, and watching it come back to life was a reward in
-            itself.
+            The restoration was less overhaul than revival — sorting out the small things three
+            decades of storage will do to a bike. Every hour on it brought something back.
           </Typography>
           <Typography variant="body1" paragraph>
-            The bike made its public debut at the 125 Dream Race Show and Shine at Washougal MX,
-            where it was selected by Seth Enslow as his bike of choice. Standing next to it that
-            day, seeing how well it had held up — how new it still looks, how cleanly it runs —
-            was something I won't forget. This August it returns to Washougal for the 15th Annual
-            125 Dream Race.
+            It made its public debut at the 125 Dream Race Show and Shine at Washougal MX, where
+            Seth Enslow picked it as his bike of choice. Standing next to it that day — seeing how
+            new it still looks, how cleanly it runs — is something I won't forget. This August it
+            goes back to Washougal for the 15th Annual 125 Dream Race.
           </Typography>
           <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
-            Some things are worth waiting thirty years for.
+            Some circles take thirty years to close.
           </Typography>
         </Paper>
         <ThenAndNew />
