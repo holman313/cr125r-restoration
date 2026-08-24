@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import NavBar from './components/NavBar';
 import Hero from './components/Hero';
+import Footer from './components/Footer';
 import Gallery from './components/Gallery';
 import Specs from './components/Specs';
 import MyStory from './components/MyStory';
@@ -84,6 +85,7 @@ export default function App() {
       {activeTab === 'my-story' && <MyStory />}
       {activeTab === 'mxa-review' && <MXAReview />}
       {activeTab === 'show-gallery' && <ShowGallery />}
+      <Footer />
     </ThemeProvider>
   );
 }
