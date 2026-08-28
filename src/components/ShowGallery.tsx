@@ -146,9 +146,34 @@ export default function ShowGallery() {
   return (
     <Box sx={{ py: 6, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
-        <Typography variant="h4" fontWeight={700} gutterBottom>
-          Selfie Time
-        </Typography>
+        {/* Heading pairs with the event mark so the gallery reads as
+            belonging to the Dream Race, matching the hero's attribution
+            chip on My Story. */}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
+          <Typography variant="h4" fontWeight={700}>
+            Selfie Time
+          </Typography>
+          <Box
+            component="a"
+            href="https://www.125dreamrace.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="125 Dream Race"
+            sx={{ display: 'inline-block', lineHeight: 0, flexShrink: 0 }}
+          >
+            <Box
+              component="img"
+              src="/images/125dr-logo.jpg"
+              alt="125 Dream Race"
+              sx={{
+                height: { xs: 44, md: 56 },
+                width: 'auto',
+                display: 'block',
+                borderRadius: 1,
+              }}
+            />
+          </Box>
+        </Box>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 3, maxWidth: 620 }}>
           Snap a photo with the bike, add a note. It lands here in our gallery dedicated to the
           125 Dream Race.
