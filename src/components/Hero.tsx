@@ -1,7 +1,5 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { SHOW_GALLERY_ENABLED, tabToSlug } from '../tabs';
 
 interface HeroProps {
   /** Shrink to a slim banner so the section below starts above the fold. */
@@ -15,8 +13,6 @@ const SHOW_ENDS = new Date('2026-08-31T00:00:00-07:00');
 const EVENT_IN_PAST = Date.now() >= SHOW_ENDS.getTime();
 
 export default function Hero({ compact = false }: HeroProps) {
-  const showCta = SHOW_GALLERY_ENABLED;
-
   return (
     <Box
       sx={{
@@ -51,9 +47,10 @@ export default function Hero({ compact = false }: HeroProps) {
       />
 
       {/* Event-attribution mark — top-right of the hero, always visible.
-          Language flips to past tense after the show window closes.
-          Only on the full hero; the compact hero on other tabs shares its
-          right side with the "Become Famous" CTA and would be too crowded. */}
+          Language flips to past tense after the show window closes. Only
+          on the full hero; the compact hero's right side is otherwise
+          empty now that the CTA is gone, but kept full-hero-only for
+          consistency with how it always behaved. */}
       {!compact && (
         <Box
           component="a"
@@ -145,76 +142,7 @@ export default function Hero({ compact = false }: HeroProps) {
               </>
             )}
           </Typography>
-
-          {showCta && !compact && (
-            <Box sx={{ mt: { xs: 2.5, md: 3.5 } }}>
-              {/* Black fill, red outline, red text — reads like a motocross
-                  number plate against the red hero gradient. The default
-                  contained red-on-red washed out against the overlay. */}
-              <Button
-                href={`#${tabToSlug('show-gallery')}`}
-                variant="contained"
-                size="large"
-                sx={{
-                  fontWeight: 800,
-                  letterSpacing: 1,
-                  px: { xs: 3, md: 4 },
-                  py: { xs: 1.1, md: 1.4 },
-                  fontSize: { xs: '0.9rem', md: '1.05rem' },
-                  color: '#EA1B2C',
-                  bgcolor: '#0B0B0B',
-                  border: '2px solid #EA1B2C',
-                  boxShadow: '0 6px 22px rgba(0,0,0,0.55)',
-                  '&:hover': {
-                    bgcolor: '#151515',
-                    boxShadow: '0 8px 28px rgba(0,0,0,0.7), 0 0 12px rgba(234,27,44,0.35)',
-                    transform: 'translateY(-1px)',
-                  },
-                  transition: 'box-shadow 0.2s ease, transform 0.2s ease, background-color 0.2s ease',
-                }}
-              >
-                Become Famous →
-              </Button>
-              <Typography
-                sx={{
-                  mt: 1,
-                  color: 'rgba(255,255,255,0.85)',
-                  fontSize: { xs: '0.8rem', md: '0.95rem' },
-                  textShadow: '0 1px 6px rgba(0,0,0,0.6)',
-                }}
-              >
-                Post a photo with the bike — it lands on the show wall.
-              </Typography>
-            </Box>
-          )}
         </Box>
-
-        {showCta && compact && (
-          <Button
-            href={`#${tabToSlug('show-gallery')}`}
-            variant="contained"
-            sx={{
-              flexShrink: 0,
-              fontWeight: 800,
-              letterSpacing: 0.5,
-              borderRadius: 999,
-              px: { xs: 1.75, md: 2.5 },
-              py: { xs: 0.6, md: 0.85 },
-              fontSize: { xs: '0.7rem', md: '0.85rem' },
-              color: '#EA1B2C',
-              bgcolor: '#0B0B0B',
-              border: '2px solid #EA1B2C',
-              boxShadow: '0 4px 14px rgba(0,0,0,0.55)',
-              '&:hover': {
-                bgcolor: '#151515',
-                boxShadow: '0 6px 18px rgba(0,0,0,0.7), 0 0 10px rgba(234,27,44,0.3)',
-              },
-              transition: 'box-shadow 0.2s ease, background-color 0.2s ease',
-            }}
-          >
-            Become Famous →
-          </Button>
-        )}
       </Box>
     </Box>
   );
