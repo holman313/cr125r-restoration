@@ -38,28 +38,23 @@
     <link rel="canonical" href="https://www.1990cr125revival.com/" />
 
     <!--
-      Structured data for search engines. Vehicle rather than Article since
-      the page is fundamentally about one specific machine; a crawler that
-      understands this can surface it as a rich result (year/make/model card)
-      rather than a plain blue link. Values here are kept in sync with the
-      Specs tab by hand — there's no build step wiring them together.
+      Structured data for search engines. Article, not Vehicle — Vehicle is a
+      Product subtype, and Google only grants Product-family items a rich
+      result when they carry offers, review, or aggregateRating (Search
+      Console flagged exactly this: "Either offers, review, or
+      aggregateRating should be specified"). This page isn't a listing —
+      it's not for sale and carries no real ratings — so satisfying that
+      would mean fabricating data. Article has no such requirement; it just
+      wants headline + image, both already true here.
     -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Vehicle",
+        "@type": "Article",
+        "headline": "1990 Honda CR125R — Classic Restoration",
         "name": "1990 Honda CR125R",
-        "vehicleModelDate": "1990",
-        "manufacturer": {
-          "@type": "Organization",
-          "name": "Honda"
-        },
-        "model": "CR125R",
-        "vehicleEngine": {
-          "@type": "EngineSpecification",
-          "engineType": "125cc two-stroke single"
-        },
         "url": "https://www.1990cr125revival.com/",
+        "mainEntityOfPage": "https://www.1990cr125revival.com/",
         "image": "https://www.1990cr125revival.com/og-image.jpg",
         "description": "A 1990 Honda CR125R that sat in a shop for 32 years, brought back to show condition. The bike as found, the restoration, the finished result, and the story behind it."
       }
