@@ -50,6 +50,9 @@ let changed = 0;
 
 for await (const file of walk(PHOTOS_DIR)) {
   if (!/\.(jpe?g|png)$/i.test(file)) continue;
+  // Responsive variants (`foo-w480.jpg`) are derived from already-optimized
+  // sources by photo-variants.mjs — never re-encode or count them here.
+  if (/-w\d+\.jpe?g$/i.test(file)) continue;
 
   const original = (await stat(file)).size;
   before += original;

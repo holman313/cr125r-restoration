@@ -77,14 +77,18 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <NavBar activeTab={activeTab} onTabChange={setActiveTab} />
-      <Hero compact={activeTab !== 'my-story'} />
-      {activeTab === 'gallery-restoration' && <PartsReplaced />}
-      {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
-      {activeTab === 'gallery-as-found' && <OriginalListing />}
-      {activeTab === 'specs' && <Specs />}
-      {activeTab === 'my-story' && <MyStory />}
-      {activeTab === 'mxa-review' && <MXAReview />}
-      {activeTab === 'show-gallery' && <ShowGallery />}
+      {/* One <main> landmark for the page content; NavBar and Footer supply
+          their own (<header>/<footer>) so screen readers can jump between them. */}
+      <main>
+        <Hero compact={activeTab !== 'my-story'} />
+        {activeTab === 'gallery-restoration' && <PartsReplaced />}
+        {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
+        {activeTab === 'gallery-as-found' && <OriginalListing />}
+        {activeTab === 'specs' && <Specs />}
+        {activeTab === 'my-story' && <MyStory />}
+        {activeTab === 'mxa-review' && <MXAReview />}
+        {activeTab === 'show-gallery' && <ShowGallery />}
+      </main>
       <Footer />
     </ThemeProvider>
   );

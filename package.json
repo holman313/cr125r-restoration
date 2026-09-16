@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-photos": "node scripts/optimize-photos.mjs"
+    "optimize-photos": "node scripts/optimize-photos.mjs && node scripts/photo-variants.mjs",
+    "photo-variants": "node scripts/photo-variants.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

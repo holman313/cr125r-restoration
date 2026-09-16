@@ -9,6 +9,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import type { TabId } from '../tabs';
+import { responsiveImage } from '../responsiveImage';
 
 const QUILTED_PATTERN = [2, 1, 1, 2, 2];
 const EVEN_PATTERN = [2, 2];
@@ -114,9 +115,9 @@ export default function Gallery({ activeTab }: GalleryProps) {
   const slides = section.photos.map((photo) => ({ src: photoSrc(photo) }));
 
   return (
-    <Box sx={{ py: 6, bgcolor: 'background.paper' }}>
+    <Box component="section" aria-label={section.title} sx={{ py: 6, bgcolor: 'background.paper' }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" fontWeight={700}>
+        <Typography variant="h4" component="h2" fontWeight={700}>
           {section.title}
         </Typography>
         <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 3 }}>
@@ -126,6 +127,12 @@ export default function Gallery({ activeTab }: GalleryProps) {
           {section.photos.map((photo, i) => {
             const src = photoSrc(photo);
             const itemCols = pattern[i % pattern.length];
+            // Tiles are full-width on phones (2-col grid, every tile spans
+            // both) and ~300/600px on desktop depending on cols spanned. The
+            // grid fixes each tile's box, so width/height here only inform
+            // the browser's srcset choice — the layout never shifts either
+            // way.
+            const sizes = `(max-width: 600px) 100vw, ${itemCols >= 2 ? '600px' : '300px'}`;
             return (
               <ImageListItem
                 key={src}
@@ -135,7 +142,7 @@ export default function Gallery({ activeTab }: GalleryProps) {
                 sx={{ cursor: 'pointer', '&:hover img': { opacity: 0.85, transition: 'opacity 0.2s' } }}
               >
                 <img
-                  src={src}
+                  {...responsiveImage(src, sizes)}
                   alt={`${section.title} photo ${i + 1}`}
                   loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 4 }}

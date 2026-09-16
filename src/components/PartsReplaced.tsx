@@ -34,9 +34,9 @@ const groups: { heading: string; body: ReactNode }[] = [
 
 export default function PartsReplaced() {
   return (
-    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="What Was Replaced" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
-        <Typography variant="h4" gutterBottom fontWeight={700}>
+        <Typography variant="h4" component="h2" gutterBottom fontWeight={700}>
           What Was Replaced
         </Typography>
         <Typography variant="body1" color="text.secondary" sx={{ mb: 4, maxWidth: 640 }}>
@@ -50,11 +50,13 @@ export default function PartsReplaced() {
               <CardContent sx={{ pb: '16px !important' }}>
                 <Typography
                   variant="overline"
+                  component="h3"
                   sx={{
                     color: 'error.main',
                     fontWeight: 700,
                     letterSpacing: 2,
                     display: 'block',
+                    m: 0,
                     mb: 0.5,
                   }}
                 >

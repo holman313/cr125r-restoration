@@ -144,13 +144,13 @@ export default function ShowGallery() {
   const submitting = status === 'preparing' || status === 'submitting';
 
   return (
-    <Box sx={{ py: 6, bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="Selfie Time" sx={{ py: 6, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
         {/* Heading pairs with the event mark so the gallery reads as
             belonging to the Dream Race, matching the hero's attribution
             chip on My Story. */}
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
-          <Typography variant="h4" fontWeight={700}>
+          <Typography variant="h4" component="h2" fontWeight={700}>
             Selfie Time
           </Typography>
           <Box
@@ -168,6 +168,7 @@ export default function ShowGallery() {
               sx={{
                 height: { xs: 44, md: 56 },
                 width: 'auto',
+                aspectRatio: '1 / 1',
                 display: 'block',
                 borderRadius: 1,
               }}
@@ -283,7 +284,7 @@ export default function ShowGallery() {
           </Box>
         )}
 
-        <Typography variant="h5" fontWeight={700} sx={{ mt: 2, mb: 2 }}>
+        <Typography variant="h5" component="h3" fontWeight={700} sx={{ mt: 2, mb: 2 }}>
           From today
         </Typography>
 
@@ -315,6 +316,7 @@ export default function ShowGallery() {
                   component="img"
                   image={item.url}
                   alt={item.message || `Photo from ${item.name || 'a visitor'}`}
+                  loading="lazy"
                   sx={{ aspectRatio: '4 / 3', objectFit: 'cover' }}
                 />
                 <CardContent>

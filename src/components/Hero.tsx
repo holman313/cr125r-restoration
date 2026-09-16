@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import { srcSetProps } from '../responsiveImage';
 
 interface HeroProps {
   /** Shrink to a slim banner so the section below starts above the fold. */
@@ -23,10 +24,14 @@ export default function Hero({ compact = false }: HeroProps) {
         transition: 'height 0.25s ease',
       }}
     >
+      {/* The banner is the LCP image on every page, so it's eager and
+          high-priority — everything else on the site lazy-loads. */}
       <Box
         component="img"
-        src="/photos/finished/banner.jpg"
+        {...srcSetProps('/photos/finished/banner.jpg', '100vw')}
         alt="1990 Honda CR125R"
+        loading="eager"
+        fetchPriority="high"
         sx={{
           position: 'absolute',
           inset: 0,
@@ -95,7 +100,7 @@ export default function Hero({ compact = false }: HeroProps) {
             component="img"
             src="/images/125dr-logo.jpg"
             alt="125 Dream Race"
-            sx={{ height: { xs: 30, md: 38 }, width: 'auto', display: 'block' }}
+            sx={{ height: { xs: 30, md: 38 }, width: 'auto', aspectRatio: '1 / 1', display: 'block' }}
           />
         </Box>
       )}
@@ -122,8 +127,10 @@ export default function Hero({ compact = false }: HeroProps) {
             </Typography>
           )}
           <Typography
+            component="h1"
             fontWeight={800}
             sx={{
+              m: 0,
               color: '#fff',
               lineHeight: 1.1,
               textShadow: '0 2px 12px rgba(0,0,0,0.6)',

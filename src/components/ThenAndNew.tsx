@@ -2,6 +2,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import { srcSetProps } from '../responsiveImage';
 
 /**
  * The factory studio shot next to the restored bike, side by side.
@@ -17,7 +18,7 @@ import Typography from '@mui/material/Typography';
 export default function ThenAndNew() {
   return (
     <Box sx={{ mt: 6 }}>
-      <Typography variant="h5" fontWeight={700} gutterBottom>
+      <Typography variant="h5" component="h3" fontWeight={700} gutterBottom>
         Then and New
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
@@ -42,8 +43,9 @@ export default function ThenAndNew() {
         <Card variant="outlined" sx={{ bgcolor: '#fff' }}>
           <Box
             component="img"
-            src="/photos/factory/1990-cr125r-factory.jpg"
+            {...srcSetProps('/photos/factory/1990-cr125r-factory.jpg', '(max-width: 600px) 100vw, 420px')}
             alt="Honda's factory studio photograph of the 1990 CR125R"
+            loading="lazy"
             sx={{
               width: '100%',
               aspectRatio: '16 / 9',
@@ -68,8 +70,9 @@ export default function ThenAndNew() {
         <Card variant="outlined" sx={{ bgcolor: 'background.paper' }}>
           <Box
             component="img"
-            src="/photos/finished/profile-pipe-side.jpg"
+            {...srcSetProps('/photos/finished/profile-pipe-side.jpg', '(max-width: 600px) 100vw, 420px')}
             alt="The restored 1990 CR125R photographed today"
+            loading="lazy"
             sx={{
               width: '100%',
               aspectRatio: '16 / 9',

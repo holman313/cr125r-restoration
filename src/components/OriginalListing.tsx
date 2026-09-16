@@ -6,10 +6,10 @@ import Typography from '@mui/material/Typography';
 
 export default function OriginalListing() {
   return (
-    <Box sx={{ py: 6, bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="Original listing" sx={{ py: 6, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
         <Divider sx={{ mb: 6 }} />
-        <Typography variant="h5" fontWeight={700} gutterBottom>
+        <Typography variant="h5" component="h3" fontWeight={700} gutterBottom>
           Original Listing
         </Typography>
         <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 4 }}>
@@ -29,8 +29,11 @@ export default function OriginalListing() {
             component="img"
             src="/photos/as-found/Screenshot%202025-10-10%20105721.png"
             alt="Original Facebook Marketplace listing"
+            loading="lazy"
             sx={{
               width: { xs: '100%', md: '40%' },
+              // Intrinsic 502×301 — reserves the box before the file loads.
+              aspectRatio: '502 / 301',
               borderRadius: 2,
               border: '1px solid',
               borderColor: 'divider',

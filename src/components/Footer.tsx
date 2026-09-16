@@ -55,10 +55,13 @@ export default function Footer() {
           component="img"
           src="/images/dirt-bandit-logo.jpg"
           alt="Dirt Bandit Products"
+          loading="lazy"
           sx={{
             width: '100%',
             maxWidth: { xs: 240, sm: 280, md: 320 },
             height: 'auto',
+            // Intrinsic 741×219 — reserves the box before the file loads.
+            aspectRatio: '741 / 219',
             display: 'block',
           }}
         />

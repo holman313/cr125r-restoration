@@ -27,7 +27,7 @@ export default function RunningVideo() {
 
   return (
     <Box sx={{ mt: 6 }}>
-      <Typography variant="h5" fontWeight={700} gutterBottom>
+      <Typography variant="h5" component="h3" fontWeight={700} gutterBottom>
         Hear It Run
       </Typography>
       <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>

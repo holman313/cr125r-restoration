@@ -8,9 +8,9 @@ import ThenAndNew from './ThenAndNew';
 
 export default function MyStory() {
   return (
-    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="My Story" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="md">
-        <Typography variant="h4" gutterBottom fontWeight={700}>
+        <Typography variant="h4" component="h2" gutterBottom fontWeight={700}>
           My Story
         </Typography>
         <Paper variant="outlined" sx={{ p: 4 }}>

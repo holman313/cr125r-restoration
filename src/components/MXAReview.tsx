@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import { srcSetProps } from '../responsiveImage';
 
 const highlights = [
   {
@@ -40,12 +41,16 @@ const mxaPhotos = [
   { src: '/photos/MXA/Retro_8_e-scaled.jpg' },
 ];
 
-const clickableImg = (src: string, alt: string, sx: object, onClick: () => void) => (
+// Every gallery image here sits in a box with an explicit height from `sx`,
+// so the layout is already reserved — srcset/sizes just stop a phone from
+// downloading a 2048px scan to fill a 180px-tall tile.
+const clickableImg = (src: string, alt: string, sizes: string, sx: object, onClick: () => void) => (
   <Box
     key={src}
     component="img"
-    src={src}
+    {...srcSetProps(src, sizes)}
     alt={alt}
+    loading="lazy"
     onClick={onClick}
     sx={{ cursor: 'pointer', '&:hover': { opacity: 0.85, transition: 'opacity 0.2s' }, ...sx }}
   />
@@ -55,7 +60,7 @@ export default function MXAReview() {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   return (
-    <Box sx={{ bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="MXA Review" sx={{ bgcolor: 'background.default' }}>
 
       {/* ── Article content ── */}
       <Box sx={{ py: 8 }}>
@@ -65,7 +70,7 @@ export default function MXAReview() {
           <Typography variant="overline" color="error.main" fontWeight={700} letterSpacing={2}>
             MXA Retro Test
           </Typography>
-          <Typography variant="h4" fontWeight={700} sx={{ mt: 1, mb: 1 }}>
+          <Typography variant="h4" component="h2" fontWeight={700} sx={{ mt: 1, mb: 1 }}>
             We Ride Mike Kiedrowski's Factory Honda CR125
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" sx={{ mb: 3 }}>
@@ -98,7 +103,7 @@ export default function MXAReview() {
           <Divider sx={{ my: 4 }} />
 
           {/* Highlight cards */}
-          <Typography variant="h6" fontWeight={700} sx={{ mb: 3 }}>
+          <Typography variant="h6" component="h3" fontWeight={700} sx={{ mb: 3 }}>
             What MXA Covers
           </Typography>
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mb: 5 }}>
@@ -165,7 +170,7 @@ export default function MXAReview() {
       <Box sx={{ pb: 8, bgcolor: 'background.paper' }}>
         <Container maxWidth="lg">
           <Divider sx={{ mb: 6 }} />
-          <Typography variant="h5" fontWeight={700} sx={{ mb: 1 }}>
+          <Typography variant="h5" component="h3" fontWeight={700} sx={{ mb: 1 }}>
             MXA Photo Gallery
           </Typography>
           <Typography variant="subtitle2" color="text.secondary" sx={{ mb: 4 }}>
@@ -176,6 +181,7 @@ export default function MXAReview() {
           {clickableImg(
             '/photos/MXA/Retro_7_e-scaled.jpg',
             'Kiedrowski railing a corner on the factory CR125',
+            '(max-width: 1200px) 100vw, 1200px',
             { width: '100%', height: { xs: 240, sm: 380, md: 480 }, objectFit: 'cover', objectPosition: 'center 30%', borderRadius: 2, display: 'block', mb: 1.5 },
             () => setLightboxIndex(0),
           )}
@@ -187,7 +193,7 @@ export default function MXAReview() {
               { src: '/photos/MXA/Retro_4_e-scaled.jpg',     alt: 'Showa inverted fork detail',    idx: 2 },
               { src: '/photos/MXA/Retro_5_e-1148x1536.jpeg', alt: 'Handlebar and steering detail', idx: 3 },
             ].map((img) =>
-              clickableImg(img.src, img.alt, { width: '100%', height: { xs: 180, sm: 260, md: 340 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
+              clickableImg(img.src, img.alt, '(max-width: 900px) 50vw, 400px', { width: '100%', height: { xs: 180, sm: 260, md: 340 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
             )}
           </Box>
 
@@ -197,7 +203,7 @@ export default function MXAReview() {
               { src: '/photos/MXA/Retro_1_e-scaled.jpg', alt: 'Factory CR125 on a stand — full profile', idx: 4 },
               { src: '/photos/MXA/Retro_8_e-scaled.jpg', alt: 'Kiedrowski launching off a jump',         idx: 5 },
             ].map((img) =>
-              clickableImg(img.src, img.alt, { width: '100%', height: { xs: 220, sm: 300, md: 360 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
+              clickableImg(img.src, img.alt, '(max-width: 600px) 100vw, 700px', { width: '100%', height: { xs: 220, sm: 300, md: 360 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
             )}
           </Box>
 

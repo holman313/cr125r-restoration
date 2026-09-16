@@ -45,9 +45,9 @@ const specGroups: { heading: string; rows: [string, string][] }[] = [
 
 export default function Specs() {
   return (
-    <Box sx={{ py: 8, bgcolor: 'background.default' }}>
+    <Box component="section" aria-label="Specifications" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        <Typography variant="h4" gutterBottom fontWeight={700}>
+        <Typography variant="h4" component="h2" gutterBottom fontWeight={700}>
           Specifications
         </Typography>
 
@@ -56,7 +56,8 @@ export default function Specs() {
             <Box key={group.heading}>
               <Typography
                 variant="overline"
-                sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block', mb: 2 }}
+                component="h3"
+                sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block', m: 0, mb: 2 }}
               >
                 {group.heading}
               </Typography>
