@@ -28,7 +28,7 @@ export default function Hero({ compact = false }: HeroProps) {
           high-priority — everything else on the site lazy-loads. */}
       <Box
         component="img"
-        {...srcSetProps('/photos/finished/profile-chain-side.jpg', '100vw')}
+        {...srcSetProps('/photos/finished/profile-pipe-side.jpg', '100vw')}
         alt="1990 Honda CR125R"
         loading="eager"
         fetchPriority="high"
