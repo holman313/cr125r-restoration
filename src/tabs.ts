@@ -170,7 +170,7 @@ export const TAB_META: Record<TabId, { title: string; description: string }> = {
   specs: {
     title: '1990 Honda CR125R Specs & Features | CR 125 Revival',
     description:
-      '1990 Honda CR125R specs: 125cc two-stroke with the first HPP power valve on a CR125, first-generation 45mm Showa inverted forks, 6-speed, disc brakes.',
+      '1990 Honda CR125R specs and how it differs from the 1989 and 1991: first HPP power valve on a CR125, first 45mm Showa inverted forks, 6-speed, disc brakes.',
   },
   'mxa-review': {
     title: "MXA Retro Test: Kiedrowski's Factory 1990 CR125 | CR 125 Revival",
