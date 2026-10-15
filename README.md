@@ -21,7 +21,7 @@ tab switcher, deployed as static files.
 ```bash
 npm install
 npm run dev      # dev server with HMR
-npm run build    # type-check (tsc -b) then build to dist/
+npm run build    # type-check, build, then pre-render one HTML page per tab into dist/
 npm run preview  # serve the production build locally
 npm run lint     # eslint
 ```
@@ -31,18 +31,36 @@ npm run lint     # eslint
 ## How the site is put together
 
 `src/App.tsx` holds a single piece of state — the active tab — and renders `NavBar` and `Hero`
-persistently above whichever section is selected. Tab IDs are defined once in
-`src/components/NavBar.tsx` as the `TAB_IDS` const array; `TabId` is derived from it, so adding
-a tab means adding an ID there, a label in `TAB_LABELS`, and a branch in `App.tsx`.
+persistently above whichever section is selected. Tabs are defined once in `src/tabs.ts`:
+`TAB_IDS`, nav labels, URL slugs, and each page's search title and description (`TAB_META`).
+Adding a tab means adding it there, a branch in `App.tsx`, and a line in `public/sitemap.xml`.
 
-| Tab | Component | Notes |
-| --- | --- | --- |
-| My Story | `MyStory.tsx` | Default tab — the personal writeup |
-| As Found | `Gallery.tsx` + `OriginalListing.tsx` | Gallery, then the Facebook Marketplace listing below it |
-| Restoration | `Gallery.tsx` | Work-in-progress photos |
-| After Restoration | `Gallery.tsx` | Finished bike |
-| Specs | `Specs.tsx` | Grouped spec cards: overview, engine, chassis, suspension, brakes |
-| MXA Review | `MXAReview.tsx` | Summary of the MXA retro test of Mike Kiedrowski's factory 1990 CR125, with scanned pages |
+| Tab | URL | Component | Notes |
+| --- | --- | --- | --- |
+| My Story | `/` | `MyStory.tsx` | Home page — the personal writeup |
+| As Found | `/as-found` | `Gallery.tsx` + `OriginalListing.tsx` | Gallery, then the Facebook Marketplace listing below it |
+| Restoration | `/restoration` | `PartsReplaced.tsx` + `Gallery.tsx` | Parts list, then work-in-progress photos |
+| After Restoration | `/after-restoration` | `Gallery.tsx` | Finished bike |
+| Specs | `/specs` | `Specs.tsx` | Grouped spec cards: engine, chassis, suspension, brakes |
+| MXA Review | `/mxa-review` | `MXAReview.tsx` | Summary of the MXA retro test of Mike Kiedrowski's factory 1990 CR125, with scanned pages |
+
+### Pages and search
+
+Every tab is a real page with its own URL, and `npm run build` pre-renders each one to static
+HTML (`dist/index.html`, `dist/specs.html`, ...) with that page's text, styles, title,
+description, canonical link and structured data already in it. Search engines index each page
+separately without needing to run JavaScript. In the browser, the page then "hydrates" and tab
+switches happen in place via the History API, without a full page load.
+
+The pieces: `src/entry-server.tsx` renders a page to HTML, `scripts/prerender.mjs` writes the
+files and fills in each page's `<head>`, and `vercel.json` (`cleanUrls`) serves `specs.html` at
+`/specs`. Old links from before the switch (`/#specs`) are redirected to the new URLs in
+`src/main.tsx`.
+
+Because pages are rendered without knowing the screen size, layout that differs between phone
+and desktop (hero height, short vs. long tab labels) is done with CSS breakpoints rather than
+JavaScript. Otherwise the HTML and the browser's first render would disagree and the page
+would jump on load.
 
 The three gallery tabs all render the same `Gallery` component — it looks up its content by
 `activeTab` from the `sections` array, so each one carries its own title, subtitle, photo list,
@@ -57,7 +75,7 @@ rather than hashed by the bundler.
 public/photos/
 ├── as-found/      the bike as purchased, plus the listing screenshot
 ├── restoration/   work in progress
-├── finished/      completed bike — includes banner.jpg used by the Hero
+├── finished/      completed bike — the Hero uses profile-pipe-side.jpg
 └── MXA/           scanned magazine pages for the MXA Review tab
 ```
 
@@ -86,6 +104,7 @@ up in `index.html`, the banner in `src/components/Hero.tsx`.
 
 ## Deploying
 
-The build output is a plain static bundle in `dist/` — no server-side anything. There is no
-deploy config committed to this repo (no CI workflow, no host config file), so publishing is
-whatever you point at `dist/` after `npm run build`.
+Hosted on Vercel, which builds and deploys automatically on every push to `main`. The build
+output is a plain static site in `dist/` — no server code runs at request time. `vercel.json`
+turns on `cleanUrls` (so `/specs` serves `specs.html`) and `trailingSlash: false` (so `/specs/`
+redirects to `/specs`, matching the canonical URLs).

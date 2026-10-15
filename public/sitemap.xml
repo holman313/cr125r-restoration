@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  One entry, deliberately. The site's tabs are hash-routed (#specs,
-  #story, ...), and search engines treat everything after # as the same
-  document — there is only one crawlable URL here, not six. Listing hash
-  fragments as separate <url> entries would be misleading to a crawler.
+  One entry per pre-rendered page. Keep in step with TAB_SLUGS / PRERENDER_TABS
+  in src/tabs.ts. Selfie Time is left out on purpose: it only exists during
+  the show weekend.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.1990cr125revival.com/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.1990cr125revival.com/as-found</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.1990cr125revival.com/restoration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.1990cr125revival.com/after-restoration</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.1990cr125revival.com/specs</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.1990cr125revival.com/mxa-review</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

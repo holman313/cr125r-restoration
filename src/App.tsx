@@ -11,7 +11,7 @@ import OriginalListing from './components/OriginalListing';
 import PartsReplaced from './components/PartsReplaced';
 import MXAReview from './components/MXAReview';
 import ShowGallery from './components/ShowGallery';
-import { slugToTab, tabToSlug, type TabId } from './tabs';
+import { DEFAULT_TAB, TAB_META, pathToTab, tabToPath, type TabId } from './tabs';
 
 const theme = createTheme({
   palette: {
@@ -34,35 +34,39 @@ const theme = createTheme({
 
 const GALLERY_TABS = new Set<TabId>(['gallery-as-found', 'gallery-restoration', 'gallery-finished']);
 
-const DEFAULT_TAB: TabId = 'my-story';
-
 /**
- * Deep-linkable tab state backed by the URL hash: sharing a link to a
- * specific tab lands the visitor there, and the browser back button walks
- * back through tab changes.
+ * Tab state backed by the page path: every tab is a real URL (`/specs`,
+ * `/restoration`, ...), pre-rendered to its own HTML file at build time so
+ * search engines can index each page's text. In the browser, switching tabs
+ * uses the History API instead of a full page load, and the back button
+ * walks back through tab changes.
  *
- * Hash routing rather than the History API so it works on any static host
- * without server-side SPA fallback.
+ * The starting tab comes in as a prop rather than being read from
+ * `window` here, so the build-time render (no window) and the browser's
+ * first render produce identical markup for hydration.
  */
-function readTabFromHash(): TabId {
-  if (typeof window === 'undefined') return DEFAULT_TAB;
-  const slug = window.location.hash.replace(/^#/, '');
-  return slugToTab(slug) ?? DEFAULT_TAB;
-}
-
-function useTabHash(): [TabId, (next: TabId) => void] {
-  const [tab, setTab] = useState<TabId>(readTabFromHash);
+function useTabRoute(initialTab: TabId): [TabId, (next: TabId) => void] {
+  const [tab, setTab] = useState<TabId>(initialTab);
 
   useEffect(() => {
-    const onHashChange = () => setTab(readTabFromHash());
-    window.addEventListener('hashchange', onHashChange);
-    return () => window.removeEventListener('hashchange', onHashChange);
+    const onPopState = () => setTab(pathToTab(window.location.pathname) ?? DEFAULT_TAB);
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
+  // Keep the browser tab title and description in step with the page. The
+  // pre-rendered HTML already has the right values on first load; this
+  // covers in-app tab switches.
+  useEffect(() => {
+    const meta = TAB_META[tab];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
+  }, [tab]);
+
   const setActiveTab = useCallback((next: TabId) => {
-    const desired = `#${tabToSlug(next)}`;
-    if (window.location.hash !== desired) {
-      window.location.hash = desired;
+    const path = tabToPath(next);
+    if (window.location.pathname !== path) {
+      window.history.pushState(null, '', path);
     }
     setTab(next);
   }, []);
@@ -70,8 +74,12 @@ function useTabHash(): [TabId, (next: TabId) => void] {
   return [tab, setActiveTab];
 }
 
-export default function App() {
-  const [activeTab, setActiveTab] = useTabHash();
+interface AppProps {
+  initialTab?: TabId;
+}
+
+export default function App({ initialTab = DEFAULT_TAB }: AppProps) {
+  const [activeTab, setActiveTab] = useTabRoute(initialTab);
 
   return (
     <ThemeProvider theme={theme}>
