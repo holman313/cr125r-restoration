@@ -5,7 +5,7 @@
   document — there is only one crawlable URL here, not six. Listing hash
   fragments as separate <url> entries would be misleading to a crawler.
 -->
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.1990cr125revival.com/</loc>
     <changefreq>monthly</changefreq>
