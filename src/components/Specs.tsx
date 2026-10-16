@@ -91,7 +91,8 @@ function WhyNinety() {
         The '89 was the last CR125 with conventional forks and the old ATAC power valve. For 1990
         Honda brought over the CR250R's HPP power valve and put inverted forks on the 125 for the
         first time. A year later the '91 got a new frame, CR250-style bodywork, and a reworked fork,
-        so the 1990 stands alone: new engine and fork, original look.
+        so the 1990 stands alone: new engine and fork, original look. And the engine was a keeper:
+        Honda kept it in the CR125, refined but never replaced, for at least the next decade.
       </Typography>
       <Box
         sx={{
