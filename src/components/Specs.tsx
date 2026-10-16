@@ -94,11 +94,14 @@ function WhyNinety() {
         so the 1990 stands alone: new engine and fork, original look. And the engine was a keeper:
         Honda kept it in the CR125, refined but never replaced, for at least the next decade.
       </Typography>
+      {/* Each card's year sits in a filled header strip so, when the cards
+          stack on a phone, every list of points is clearly attached to the
+          year above it rather than floating between two years. */}
       <Box
         sx={{
           display: 'grid',
           gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
-          gap: 2,
+          gap: { xs: 3, md: 2 },
         }}
       >
         {modelYears.map((m) => (
@@ -107,19 +110,38 @@ function WhyNinety() {
             variant="outlined"
             sx={{
               bgcolor: 'background.paper',
-              borderColor: m.current ? 'error.main' : 'divider',
+              borderColor: m.current ? 'error.main' : 'rgba(255,255,255,0.2)',
               borderWidth: m.current ? 2 : 1,
             }}
           >
-            <CardContent sx={{ pb: '16px !important' }}>
-              <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1.5, mb: 1 }}>
-                <Typography variant="h5" component="p" fontWeight={800} sx={{ color: m.current ? 'error.main' : 'text.primary' }}>
-                  {m.year}
-                </Typography>
-                <Typography variant="caption" color="text.secondary" sx={{ textTransform: 'uppercase', letterSpacing: 1.5 }}>
-                  {m.headline}
-                </Typography>
-              </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'baseline',
+                gap: 1.5,
+                px: 2,
+                py: 1.25,
+                bgcolor: m.current ? 'error.main' : 'rgba(255,255,255,0.08)',
+                borderBottom: '1px solid',
+                borderColor: m.current ? 'error.main' : 'rgba(255,255,255,0.12)',
+              }}
+            >
+              <Typography variant="h5" component="p" fontWeight={800} sx={{ color: '#fff', lineHeight: 1 }}>
+                {m.year}
+              </Typography>
+              <Typography
+                variant="caption"
+                sx={{
+                  color: m.current ? '#fff' : 'text.secondary',
+                  fontWeight: m.current ? 700 : 400,
+                  textTransform: 'uppercase',
+                  letterSpacing: 1.5,
+                }}
+              >
+                {m.headline}
+              </Typography>
+            </Box>
+            <CardContent sx={{ pt: 1.5, pb: '16px !important' }}>
               <Box component="ul" sx={{ m: 0, pl: 2.5 }}>
                 {m.points.map((p) => (
                   <Typography key={p} component="li" variant="body2" sx={{ mb: 0.5 }}>
