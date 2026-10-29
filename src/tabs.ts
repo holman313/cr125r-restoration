@@ -153,7 +153,7 @@ export const TAB_META: Record<TabId, { title: string; description: string }> = {
   'my-story': {
     title: '1990 Honda CR125 Restoration | CR 125 Revival',
     description:
-      'Honda CR125 restoration: a low-hour 1990 CR 125 that sat in a shop for 32 years, brought back to show condition. As found, the restore, parts list, and specs.',
+      '1990 Honda CR125 restoration: a low-hour CR 125 that sat in a shop for 32 years, brought back to show condition. As found, the restore, parts list, and specs.',
   },
   'gallery-as-found': {
     title: 'Honda CR125 As Found, All Original | CR 125 Revival',
