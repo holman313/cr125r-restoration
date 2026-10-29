@@ -28,6 +28,12 @@ interface GallerySection {
   id: TabId;
   title: string;
   subtitle: string;
+  /**
+   * Start of each photo's alt text. Not shown on the page; screen readers
+   * and image search read it. Sections alternate "CR125" and "CR 125" so
+   * both spellings are covered without stuffing either into every image.
+   */
+  altPrefix: string;
   photos: GalleryPhoto[];
   colPattern: number[];
   rowHeight: { mobile: number; desktop: number };
@@ -38,6 +44,7 @@ const sections: GallerySection[] = [
     id: 'gallery-as-found',
     title: 'As Found',
     subtitle: 'The bike as it was when I bought it — all original, sitting since 1992.',
+    altPrefix: '1990 Honda CR125 as found, all original',
     colPattern: QUILTED_PATTERN,
     rowHeight: { mobile: 200, desktop: 220 },
     photos: [
@@ -56,6 +63,7 @@ const sections: GallerySection[] = [
     id: 'gallery-restoration',
     title: 'The Restoration',
     subtitle: 'Bringing it back to life — one detail at a time.',
+    altPrefix: 'Honda CR 125 restoration in progress',
     colPattern: QUILTED_PATTERN,
     rowHeight: { mobile: 200, desktop: 260 },
     photos: [
@@ -74,6 +82,7 @@ const sections: GallerySection[] = [
     id: 'gallery-finished',
     title: 'After Restoration',
     subtitle: 'Show-ready and running like new.',
+    altPrefix: 'Restored 1990 Honda CR125',
     colPattern: EVEN_PATTERN,
     rowHeight: { mobile: 220, desktop: 300 },
     photos: [
@@ -143,7 +152,7 @@ export default function Gallery({ activeTab }: GalleryProps) {
               >
                 <img
                   {...responsiveImage(src, sizes)}
-                  alt={`${section.title} photo ${i + 1}`}
+                  alt={`${section.altPrefix}, photo ${i + 1}`}
                   loading="lazy"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 4 }}
                 />

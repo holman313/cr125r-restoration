@@ -44,7 +44,7 @@ export default function ThenAndNew() {
           <Box
             component="img"
             {...srcSetProps('/photos/factory/1990-cr125r-factory.jpg', '(max-width: 600px) 100vw, 420px')}
-            alt="Honda's factory studio photograph of the 1990 CR125R"
+            alt="Honda's factory studio photo of the 1990 CR125"
             loading="lazy"
             sx={{
               width: '100%',
@@ -71,7 +71,7 @@ export default function ThenAndNew() {
           <Box
             component="img"
             {...srcSetProps('/photos/finished/profile-pipe-side.jpg', '(max-width: 600px) 100vw, 420px')}
-            alt="The restored 1990 CR125R photographed today"
+            alt="The same 1990 Honda CR 125 after restoration"
             loading="lazy"
             sx={{
               width: '100%',

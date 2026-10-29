@@ -20,6 +20,11 @@ const SITE = 'https://www.1990cr125revival.com';
 const DIST = path.resolve('dist');
 const SSR_ENTRY = path.resolve('dist-ssr/entry-server.js');
 
+// Both spellings people search with, plus the common variants. Kept in step
+// with the keywords <meta> tag in index.html.
+const KEYWORDS =
+  'Honda CR125, CR125, CR 125, Honda CR 125, CR125R, CR125 restoration, CR 125 restoration, 1990 CR125';
+
 const { render, PRERENDER_TABS, TAB_META, tabToPath } = await import(pathToFileURL(SSR_ENTRY).href);
 const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
 
@@ -65,6 +70,7 @@ for (const tab of PRERENDER_TABS) {
     mainEntityOfPage: url,
     image: `${SITE}/og-image.jpg`,
     description,
+    keywords: KEYWORDS,
   };
   // `<` escaped so text can never close the <script> element early.
   const jsonLdText = JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c');

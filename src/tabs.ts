@@ -142,45 +142,48 @@ export function pathToTab(pathname: string): TabId | undefined {
  * The pre-render step writes these into each page's <head>; the client
  * updates document.title from them when switching tabs.
  *
- * Titles stay near 60 characters and descriptions under ~160 so Google
- * shows them untruncated. Each leads with the words people actually search
- * ("1990 Honda CR125R", "CR 125", "restoration") for that page's subject.
+ * Written for how people search: "Honda CR125" / "CR125" first, and the
+ * spaced "CR 125" spelling too (every title's suffix carries it), rather
+ * than the full model code "CR125R" that few people type. Each spelling
+ * appears about once per field; repeating them more reads as keyword
+ * stuffing to Google. Titles stay under 60 characters and descriptions
+ * under 160 so Google shows them untruncated.
  */
 export const TAB_META: Record<TabId, { title: string; description: string }> = {
   'my-story': {
-    title: '1990 Honda CR125R Restoration | CR 125 Revival',
+    title: '1990 Honda CR125 Restoration | CR 125 Revival',
     description:
-      '1990 Honda CR125R restoration: a low-hour CR 125 that sat in a shop for 32 years, brought back to show condition. As found, the restore, parts list, and specs.',
+      'Honda CR125 restoration: a low-hour 1990 CR 125 that sat in a shop for 32 years, brought back to show condition. As found, the restore, parts list, and specs.',
   },
   'gallery-as-found': {
-    title: '1990 Honda CR125R As Found, All Original | CR 125 Revival',
+    title: 'Honda CR125 As Found, All Original | CR 125 Revival',
     description:
-      'The 1990 Honda CR125R as it was bought in July 2025: low hours, all original, after 32 years in a shop. Photos and the original Marketplace listing.',
+      'A 1990 Honda CR125 as it was bought in July 2025: low hours, all original, after 32 years in a shop. CR 125 photos and the original Marketplace listing.',
   },
   'gallery-restoration': {
-    title: '1990 CR125R Restoration Parts List & Photos | CR 125 Revival',
+    title: 'Honda CR125 Restoration Parts List & Photos | CR 125 Revival',
     description:
-      'What went into restoring a 1990 Honda CR125R: Boyesen reeds, FMF pipe, EVO Oregon suspension rebuild, all-new bearings, chain, sprockets, and tires.',
+      'Honda CR125 restoration parts list: Boyesen reeds, FMF pipe, EVO Oregon suspension rebuild, all-new bearings, chain, sprockets, and tires on a 1990 CR 125.',
   },
   'gallery-finished': {
-    title: 'Restored 1990 Honda CR125R Photos | CR 125 Revival',
+    title: 'Restored Honda CR125 Photos | CR 125 Revival',
     description:
-      'The finished 1990 Honda CR125R restoration: profile, three-quarter, and detail photos of a show-ready CR 125, from the HPP engine to the Showa forks.',
+      'Finished Honda CR125 restoration photos: a show-ready 1990 CR 125 in profile, three-quarter, and detail shots, from the HPP engine to the Showa forks.',
   },
   specs: {
-    title: '1990 Honda CR125R Specs & Features | CR 125 Revival',
+    title: 'Honda CR125 Specs: 1989 vs 1990 vs 1991 | CR 125 Revival',
     description:
-      '1990 Honda CR125R specs and how it differs from the 1989 and 1991: first HPP power valve on a CR125, first 45mm Showa inverted forks, 6-speed, disc brakes.',
+      'Honda CR125 specs, with the 1989, 1990, and 1991 CR 125 compared: the first HPP power valve and first inverted Showa forks on a CR125, 6-speed, disc brakes.',
   },
   'mxa-review': {
-    title: "MXA Retro Test: Kiedrowski's Factory 1990 CR125 | CR 125 Revival",
+    title: "Kiedrowski's Factory Honda CR125: MXA Test | CR 125 Revival",
     description:
-      "Motocross Action's retro test of Mike Kiedrowski's factory 1990 Honda CR125, the bike he raced to the 125cc National title, versus the production CR125R.",
+      "Motocross Action's retro test of Mike Kiedrowski's factory 1990 Honda CR125, the bike he raced to the 125cc National title, versus the stock CR 125.",
   },
   'show-gallery': {
-    title: 'Selfie Time at the 125 Dream Race | CR 125 Revival',
+    title: 'Honda CR125 at the 125 Dream Race | CR 125 Revival',
     description:
-      'Visitor photos with the 1990 Honda CR125R at the 125 Dream Race, Washougal MX.',
+      'Visitor photos with a restored 1990 Honda CR125 at the 125 Dream Race, Washougal MX: the CR 125 Revival show gallery.',
   },
 };
 

@@ -45,7 +45,7 @@ export default function Hero({ compact = false }: HeroProps) {
       <Box
         component="img"
         {...srcSetProps('/photos/finished/profile-pipe-side.jpg', '100vw')}
-        alt="1990 Honda CR125R"
+        alt="Restored 1990 Honda CR125, pipe side"
         loading="eager"
         fetchPriority="high"
         sx={{

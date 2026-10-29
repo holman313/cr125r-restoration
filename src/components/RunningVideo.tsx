@@ -50,7 +50,7 @@ export default function RunningVideo() {
           <Box
             component="iframe"
             src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&playsinline=1`}
-            title="1990 Honda CR125R running"
+            title="1990 Honda CR125 two-stroke running"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
             sx={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
