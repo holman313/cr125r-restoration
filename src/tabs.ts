@@ -180,7 +180,7 @@ export const TAB_META: Record<TabId, { title: string; description: string }> = {
   'mxa-review': {
     title: "Kiedrowski's 1990 Factory CR125: MXA Test | CR 125 Revival",
     description:
-      "Motocross Action's retro test of Mike Kiedrowski's factory 1990 Honda CR125, the bike he raced to the 125cc National title, versus the stock CR 125.",
+      "Motocross Action's retro test of Mike Kiedrowski's factory 1990 Honda CR125, winner of four 125 Nationals that season, versus the stock CR 125.",
   },
   'show-gallery': {
     title: '1990 Honda CR125 at the 125 Dream Race | CR 125 Revival',

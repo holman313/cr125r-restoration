@@ -11,26 +11,34 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { srcSetProps } from '../responsiveImage';
 
+/*
+ * Facts here are checked against the MXA article and the AMA record:
+ * Kiedrowski was the 1989 AMA 125 National Champion (on a Honda). In 1990,
+ * on this bike, he won the Gainesville, Binghamton, Steel City and Budds
+ * Creek 125 Nationals but finished second in the championship, one point
+ * behind Suzuki's Guy Cooper. He won the 125 title again in 1991, for
+ * Kawasaki. Don't describe 1990 as a championship season.
+ */
 const highlights = [
   {
     label: 'The Bike',
-    text: 'MXA got their hands on Mike "Kied" Kiedrowski\'s actual 1990 factory Honda CR125 — the bike he raced during his dominant 125cc National Championship season.',
+    text: 'MXA got their hands on Mike "Kied" Kiedrowski\'s actual 1990 factory Honda CR125, brought to Perris Raceway by his factory mechanic, Ron Wood. Kiedrowski came into 1990 as the reigning 125cc National Champion.',
   },
   {
     label: 'Factory Differences',
-    text: 'The factory CR125 featured works components unavailable to the public: hand-ported cylinder, factory suspension valving, and magnesium engine cases to shed weight.',
+    text: 'Works parts the public couldn\'t buy, including 45mm magnesium Showa works forks and a magnesium top triple clamp.',
   },
   {
     label: 'The Ride',
-    text: 'MXA\'s test riders put the factory machine through its paces and compared it against the production CR125R — noting where Honda\'s factory team found extra performance.',
+    text: 'MXA\'s test riders put the factory machine through its paces, a rare look at what separated a works bike from the CR125R in the showroom.',
   },
   {
-    label: 'Legacy',
-    text: 'Kiedrowski\'s 1990 title on the CR125 is considered one of the defining moments of Honda\'s 125cc dominance — a run that lasted until Yamaha\'s YZ125 arrived in 1996.',
+    label: 'The 1990 Season',
+    text: 'Kiedrowski won the Gainesville, Binghamton, Steel City and Budds Creek 125 Nationals on this bike, but lost the 1990 title to Suzuki\'s Guy Cooper by a single point. He took the 125 crown back in 1991, riding for Kawasaki.',
   },
 ];
 
-const tags = ['1990 Honda CR125', 'Factory Bike', 'Mike Kiedrowski', 'MXA Retro Test', '125cc National Champion'];
+const tags = ['1990 Honda CR125', 'Factory Bike', 'Mike Kiedrowski', 'MXA Retro Test', '1989 125cc National Champion'];
 
 const mxaPhotos = [
   { src: '/photos/MXA/Retro_7_e-scaled.jpg' },
@@ -89,9 +97,9 @@ export default function MXAReview() {
           {/* Intro */}
           <Typography variant="body1" paragraph>
             Motocross Action Magazine's retro test series puts iconic machines back under scrutiny —
-            and few bikes are more deserving than the 1990 Honda CR125 that carried Mike Kiedrowski
-            to the 125cc National Championship. This isn't just a stock CR125 review: MXA tracked
-            down Kied's actual factory machine and threw a leg over it.
+            and few bikes are more deserving than the 1990 Honda CR125 that reigning 125cc National
+            Champion Mike Kiedrowski raced to four National wins that year. This isn't just a stock
+            CR125 review: MXA tracked down Kied's actual factory machine and threw a leg over it.
           </Typography>
           <Typography variant="body1" paragraph>
             The 1990 CR125R was already a standout production bike — the first CR125 to feature
