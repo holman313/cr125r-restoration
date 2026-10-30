@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot, hydrateRoot } from 'react-dom/client';
 import { CacheProvider } from '@emotion/react';
+import { inject } from '@vercel/analytics';
 import App from './App.tsx';
 import { createEmotionCache } from './emotionCache';
 import { pathToTab, slugToTab, tabToPath } from './tabs';
@@ -26,6 +27,13 @@ function redirectLegacyHash(): boolean {
 }
 
 if (!redirectLegacyHash()) {
+  // Vercel Web Analytics: cookieless visit counts, shown in the Vercel
+  // dashboard. Runs only in the browser (never in the build-time render),
+  // and also counts in-page tab switches, which change the URL through the
+  // History API. `npm run dev` logs events to the console instead of
+  // sending them.
+  inject({ mode: import.meta.env.DEV ? 'development' : 'production' });
+
   // Unknown paths get null: the not-found view, matching the pre-rendered
   // 404.html that Vercel serves for them.
   const initialTab = pathToTab(window.location.pathname) ?? null;
