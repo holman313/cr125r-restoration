@@ -11,7 +11,8 @@ import OriginalListing from './components/OriginalListing';
 import PartsReplaced from './components/PartsReplaced';
 import MXAReview from './components/MXAReview';
 import ShowGallery from './components/ShowGallery';
-import { DEFAULT_TAB, TAB_META, pathToTab, tabToPath, type TabId } from './tabs';
+import NotFound from './components/NotFound';
+import { DEFAULT_TAB, NOT_FOUND_META, TAB_META, pathToTab, tabToPath, type TabId } from './tabs';
 
 const theme = createTheme({
   palette: {
@@ -47,15 +48,18 @@ const GALLERY_TABS = new Set<TabId>(['gallery-as-found', 'gallery-restoration', 
  * uses the History API instead of a full page load, and the back button
  * walks back through tab changes.
  *
+ * `null` means the path isn't a page: the not-found view, which the build
+ * also writes to 404.html for Vercel to serve on unknown addresses.
+ *
  * The starting tab comes in as a prop rather than being read from
  * `window` here, so the build-time render (no window) and the browser's
  * first render produce identical markup for hydration.
  */
-function useTabRoute(initialTab: TabId): [TabId, (next: TabId) => void] {
-  const [tab, setTab] = useState<TabId>(initialTab);
+function useTabRoute(initialTab: TabId | null): [TabId | null, (next: TabId) => void] {
+  const [tab, setTab] = useState<TabId | null>(initialTab);
 
   useEffect(() => {
-    const onPopState = () => setTab(pathToTab(window.location.pathname) ?? DEFAULT_TAB);
+    const onPopState = () => setTab(pathToTab(window.location.pathname) ?? null);
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
@@ -64,7 +68,7 @@ function useTabRoute(initialTab: TabId): [TabId, (next: TabId) => void] {
   // pre-rendered HTML already has the right values on first load; this
   // covers in-app tab switches.
   useEffect(() => {
-    const meta = TAB_META[tab];
+    const meta = tab ? TAB_META[tab] : NOT_FOUND_META;
     document.title = meta.title;
     document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
   }, [tab]);
@@ -81,7 +85,8 @@ function useTabRoute(initialTab: TabId): [TabId, (next: TabId) => void] {
 }
 
 interface AppProps {
-  initialTab?: TabId;
+  /** The page to show; `null` renders the not-found view. */
+  initialTab?: TabId | null;
 }
 
 export default function App({ initialTab = DEFAULT_TAB }: AppProps) {
@@ -95,8 +100,9 @@ export default function App({ initialTab = DEFAULT_TAB }: AppProps) {
           their own (<header>/<footer>) so screen readers can jump between them. */}
       <main>
         <Hero compact={activeTab !== 'my-story'} />
+        {activeTab === null && <NotFound onTabChange={setActiveTab} />}
         {activeTab === 'gallery-restoration' && <PartsReplaced />}
-        {GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
+        {activeTab && GALLERY_TABS.has(activeTab) && <Gallery activeTab={activeTab} />}
         {activeTab === 'gallery-as-found' && <OriginalListing />}
         {activeTab === 'specs' && <Specs />}
         {activeTab === 'my-story' && <MyStory />}

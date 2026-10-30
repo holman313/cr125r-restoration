@@ -7,7 +7,8 @@
  * <head> with that page's own title, description, canonical URL and
  * structured data. My Story becomes dist/index.html; every other tab becomes
  * dist/<slug>.html, which Vercel serves at /<slug> (cleanUrls in
- * vercel.json).
+ * vercel.json). It also writes dist/404.html, the not-found page Vercel
+ * serves for unknown addresses.
  *
  * Search engines then get each page's full text in the HTML itself, instead
  * of one near-empty page that only fills in after JavaScript runs.
@@ -25,7 +26,7 @@ const SSR_ENTRY = path.resolve('dist-ssr/entry-server.js');
 const KEYWORDS =
   'Honda CR125, CR125, CR 125, Honda CR 125, CR125R, CR125 restoration, CR 125 restoration, 1990 CR125';
 
-const { render, PRERENDER_TABS, TAB_META, tabToPath } = await import(pathToFileURL(SSR_ENTRY).href);
+const { render, NOT_FOUND_META, PRERENDER_TABS, TAB_META, tabToPath } = await import(pathToFileURL(SSR_ENTRY).href);
 const template = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
 
 const escapeAttr = (s) =>
@@ -43,9 +44,15 @@ function replaceOnce(html, pattern, replacement, label) {
 
 const metaTag = (attr, key, value) => `<meta ${attr}="${key}" content="${escapeAttr(value)}" />`;
 
-for (const tab of PRERENDER_TABS) {
-  const { title, description } = TAB_META[tab];
-  const pagePath = tabToPath(tab);
+/**
+ * Build one page from the template. `tab` null builds the not-found page:
+ * no canonical link and a noindex tag (so Google never lists it), and no
+ * structured data.
+ */
+function buildPage(tab) {
+  const notFound = tab === null;
+  const { title, description } = notFound ? NOT_FOUND_META : TAB_META[tab];
+  const pagePath = notFound ? '/' : tabToPath(tab);
   const url = SITE + pagePath;
   const { html, styles } = render(tab);
 
@@ -59,31 +66,44 @@ for (const tab of PRERENDER_TABS) {
   page = replaceOnce(page, /<meta\s+property="og:description"[\s\S]*?\/>/, metaTag('property', 'og:description', description), 'og:description');
   page = replaceOnce(page, /<meta\s+name="twitter:title"[\s\S]*?\/>/, metaTag('name', 'twitter:title', title), 'twitter:title');
   page = replaceOnce(page, /<meta\s+name="twitter:description"[\s\S]*?\/>/, metaTag('name', 'twitter:description', description), 'twitter:description');
-  page = replaceOnce(page, /<link\s+rel="canonical"[\s\S]*?\/>/, `<link rel="canonical" href="${escapeAttr(url)}" />`, 'canonical');
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: title,
-    name: title,
-    url,
-    mainEntityOfPage: url,
-    image: `${SITE}/og-image.jpg`,
-    description,
-    keywords: KEYWORDS,
-  };
-  // `<` escaped so text can never close the <script> element early.
-  const jsonLdText = JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c');
   page = replaceOnce(
     page,
-    /<script type="application\/ld\+json">[\s\S]*?<\/script>/,
-    `<script type="application/ld+json">\n${jsonLdText}\n    </script>`,
-    'JSON-LD',
+    /<link\s+rel="canonical"[\s\S]*?\/>/,
+    notFound ? '<meta name="robots" content="noindex" />' : `<link rel="canonical" href="${escapeAttr(url)}" />`,
+    'canonical',
   );
 
-  const outFile = pagePath === '/' ? 'index.html' : `${pagePath.slice(1)}.html`;
-  fs.writeFileSync(path.join(DIST, outFile), page);
-  console.log(`prerendered ${pagePath.padEnd(20)} -> dist/${outFile}  (${(page.length / 1024).toFixed(0)} KB)`);
+  let jsonLdBlock = '';
+  if (!notFound) {
+    const jsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: title,
+      name: title,
+      url,
+      mainEntityOfPage: url,
+      image: `${SITE}/og-image.jpg`,
+      description,
+      keywords: KEYWORDS,
+    };
+    // `<` escaped so text can never close the <script> element early.
+    const jsonLdText = JSON.stringify(jsonLd, null, 2).replace(/</g, '\\u003c');
+    jsonLdBlock = `<script type="application/ld+json">\n${jsonLdText}\n    </script>`;
+  }
+  page = replaceOnce(page, /<script type="application\/ld\+json">[\s\S]*?<\/script>/, jsonLdBlock, 'JSON-LD');
+  return page;
 }
+
+function write(outFile, page, label) {
+  fs.writeFileSync(path.join(DIST, outFile), page);
+  console.log(`prerendered ${label.padEnd(20)} -> dist/${outFile}  (${(page.length / 1024).toFixed(0)} KB)`);
+}
+
+for (const tab of PRERENDER_TABS) {
+  const pagePath = tabToPath(tab);
+  write(pagePath === '/' ? 'index.html' : `${pagePath.slice(1)}.html`, buildPage(tab), pagePath);
+}
+// Vercel serves 404.html, with a 404 status, for any path with no file.
+write('404.html', buildPage(null), '(not found)');
 
 fs.rmSync(path.resolve('dist-ssr'), { recursive: true, force: true });

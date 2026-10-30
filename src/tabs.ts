@@ -189,6 +189,12 @@ export const TAB_META: Record<TabId, { title: string; description: string }> = {
   },
 };
 
+/** Title and description for the not-found page (404.html). */
+export const NOT_FOUND_META = {
+  title: 'Page Not Found | CR 125 Revival',
+  description: 'That page does not exist on the 1990 Honda CR125 Revival site.',
+};
+
 /**
  * The tabs that get a pre-rendered page. Selfie Time is only included when
  * it's enabled at build time, so to open it next year set

@@ -107,6 +107,7 @@ export default function LeaveNote() {
             disabled={disabled}
             size="small"
             fullWidth
+            helperText="Only used to reply to you. Never shared or added to a mailing list."
           />
           <TextField
             label="Note"

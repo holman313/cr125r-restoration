@@ -6,7 +6,8 @@ import type { MouseEvent } from 'react';
 import { NAV_TAB_IDS, TAB_LABELS, TAB_LABELS_SHORT, tabToPath, type TabId } from '../tabs';
 
 interface NavBarProps {
-  activeTab: TabId;
+  /** null on the not-found page: no tab is highlighted. */
+  activeTab: TabId | null;
   onTabChange: (tab: TabId) => void;
 }
 
@@ -46,7 +47,7 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
             hero-CTA-driven show-gallery view). MUI otherwise warns that the
             value doesn't match any Tab child. */}
         <Tabs
-          value={NAV_TAB_IDS.includes(activeTab) ? activeTab : false}
+          value={activeTab && NAV_TAB_IDS.includes(activeTab) ? activeTab : false}
           textColor="inherit"
           TabIndicatorProps={{ style: { backgroundColor: '#fff' } }}
           variant="scrollable"
@@ -64,7 +65,11 @@ export default function NavBar({ activeTab, onTabChange }: NavBarProps) {
               sx={{
                 fontSize: { xs: '0.7rem', sm: '0.875rem' },
                 minWidth: { xs: 'unset', sm: 90 },
-                px: { xs: 1.1, sm: 2 },
+                // Phones: tight padding so all six tabs fit down to 320px
+                // wide (the labels need ~317px), and flexGrow spreads them
+                // back out to fill the bar on wider phones.
+                px: { xs: 0.6, sm: 2 },
+                flexGrow: { xs: 1, sm: 0 },
               }}
             />
           ))}

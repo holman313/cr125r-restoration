@@ -16,11 +16,9 @@ import sharp from 'sharp';
 const PHOTOS_DIR = 'public/photos';
 const DRY_RUN = process.argv.includes('--dry');
 
-// The hero is full-bleed, so it keeps more pixels than the gallery shots.
 // Magazine scans keep their resolution entirely — they carry page detail that
 // people zoom into in the lightbox — and are only recompressed.
 const RULES = [
-  { match: (p) => p.endsWith('banner.jpg'), maxDim: 2560, quality: 82 },
   { match: (p) => p.includes(`${path.sep}MXA${path.sep}`), maxDim: Infinity, quality: 85 },
   { match: () => true, maxDim: 2000, quality: 82 },
 ];

@@ -3,7 +3,7 @@ import { createRoot, hydrateRoot } from 'react-dom/client';
 import { CacheProvider } from '@emotion/react';
 import App from './App.tsx';
 import { createEmotionCache } from './emotionCache';
-import { DEFAULT_TAB, pathToTab, slugToTab, tabToPath } from './tabs';
+import { pathToTab, slugToTab, tabToPath } from './tabs';
 
 /**
  * Links shared before the switch to real page URLs look like `/#specs`.
@@ -26,7 +26,9 @@ function redirectLegacyHash(): boolean {
 }
 
 if (!redirectLegacyHash()) {
-  const initialTab = pathToTab(window.location.pathname) ?? DEFAULT_TAB;
+  // Unknown paths get null: the not-found view, matching the pre-rendered
+  // 404.html that Vercel serves for them.
+  const initialTab = pathToTab(window.location.pathname) ?? null;
   const tree = (
     <StrictMode>
       <CacheProvider value={createEmotionCache()}>

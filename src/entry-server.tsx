@@ -9,14 +9,14 @@ import App from './App';
 import { createEmotionCache } from './emotionCache';
 import type { TabId } from './tabs';
 
-export { PRERENDER_TABS, TAB_META, tabToPath } from './tabs';
+export { NOT_FOUND_META, PRERENDER_TABS, TAB_META, tabToPath } from './tabs';
 
 /**
  * Build-time render of one page, used by scripts/prerender.mjs. Returns the
  * page markup plus the <style> tags for exactly the MUI styles that markup
  * uses, so the page is styled before any JavaScript runs.
  */
-export function render(tab: TabId): { html: string; styles: string } {
+export function render(tab: TabId | null): { html: string; styles: string } {
   const cache = createEmotionCache();
   const { extractCriticalToChunks, constructStyleTagsFromChunks } = createEmotionServer(cache);
 

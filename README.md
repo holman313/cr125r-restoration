@@ -55,7 +55,8 @@ switches happen in place via the History API, without a full page load.
 The pieces: `src/entry-server.tsx` renders a page to HTML, `scripts/prerender.mjs` writes the
 files and fills in each page's `<head>`, and `vercel.json` (`cleanUrls`) serves `specs.html` at
 `/specs`. Old links from before the switch (`/#specs`) are redirected to the new URLs in
-`src/main.tsx`.
+`src/main.tsx`. Any other address gets `404.html`, a not-found page (`NotFound.tsx`)
+listing every page; Vercel serves it with a 404 status, and it is marked `noindex`.
 
 Because pages are rendered without knowing the screen size, layout that differs between phone
 and desktop (hero height, short vs. long tab labels) is done with CSS breakpoints rather than
@@ -87,7 +88,7 @@ npm run optimize-photos        # rewrite oversized photos in place
 npm run optimize-photos -- --dry   # report what would change, write nothing
 ```
 
-It resizes to 2000px (2560px for the hero banner), re-encodes at q82 with mozjpeg, and bakes
+It resizes to 2000px, re-encodes at q82 with mozjpeg, and bakes
 in EXIF orientation so nothing rotates. Magazine scans under `MXA/` keep their resolution and
 are only recompressed. Files already within budget are skipped, and a re-encode that saves
 less than 10% is discarded — so re-running is a no-op rather than a slow quality leak.
@@ -99,8 +100,8 @@ and it also drives the lightbox order. The quilted layout repeats `colPattern` a
 changes the layout, not just the sequence. On mobile the grid drops to 2 columns with an even
 pattern.
 
-The favicon and the hero banner both come from `public/photos/finished/`; the favicon is wired
-up in `index.html`, the banner in `src/components/Hero.tsx`.
+The hero photo is `public/photos/finished/profile-pipe-side.jpg`, set in
+`src/components/Hero.tsx`. The favicon (`public/favicon.svg`) is wired up in `index.html`.
 
 ## Deploying
 

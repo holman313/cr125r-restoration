@@ -129,15 +129,6 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/banner.jpg": {
-    "w": 2560,
-    "h": 1183,
-    "widths": [
-      480,
-      1000,
-      2560
-    ]
-  },
   "/photos/finished/detail-cockpit.jpg": {
     "w": 2000,
     "h": 924,
