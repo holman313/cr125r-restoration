@@ -142,9 +142,11 @@ export function pathToTab(pathname: string): TabId | undefined {
  * The pre-render step writes these into each page's <head>; the client
  * updates document.title from them when switching tabs.
  *
- * Written for how people search: "Honda CR125" / "CR125" first, and the
- * spaced "CR 125" spelling too (every title's suffix carries it), rather
- * than the full model code "CR125R" that few people type. Each spelling
+ * Written for how people search. Search Console (Oct 2026) showed every
+ * query that found the site included "1990" (e.g. "1990 cr125",
+ * "1990 cr125r specs"), so titles lead with "1990". Each also carries
+ * "CR125" and the spaced "CR 125" (every title's suffix), and Specs uses
+ * "CR125R" because that is how people search for specs. Each spelling
  * appears about once per field; repeating them more reads as keyword
  * stuffing to Google. Titles stay under 60 characters and descriptions
  * under 160 so Google shows them untruncated.
@@ -156,32 +158,32 @@ export const TAB_META: Record<TabId, { title: string; description: string }> = {
       '1990 Honda CR125 restoration: a low-hour CR 125 that sat in a shop for 32 years, brought back to show condition. As found, the restore, parts list, and specs.',
   },
   'gallery-as-found': {
-    title: 'Honda CR125 As Found, All Original | CR 125 Revival',
+    title: '1990 Honda CR125 As Found, All Original | CR 125 Revival',
     description:
       'A 1990 Honda CR125 as it was bought in July 2025: low hours, all original, after 32 years in a shop. CR 125 photos and the original Marketplace listing.',
   },
   'gallery-restoration': {
-    title: 'Honda CR125 Restoration Parts List & Photos | CR 125 Revival',
+    title: '1990 Honda CR125 Restoration Parts List | CR 125 Revival',
     description:
       'Honda CR125 restoration parts list: Boyesen reeds, FMF pipe, EVO Oregon suspension rebuild, all-new bearings, chain, sprockets, and tires on a 1990 CR 125.',
   },
   'gallery-finished': {
-    title: 'Restored Honda CR125 Photos | CR 125 Revival',
+    title: 'Restored 1990 Honda CR125 Photos | CR 125 Revival',
     description:
       'Finished Honda CR125 restoration photos: a show-ready 1990 CR 125 in profile, three-quarter, and detail shots, from the HPP engine to the Showa forks.',
   },
   specs: {
-    title: 'Honda CR125 Specs: 1989 vs 1990 vs 1991 | CR 125 Revival',
+    title: '1990 Honda CR125R Specs: vs 1989 & 1991 | CR 125 Revival',
     description:
       'Honda CR125 specs, with the 1989, 1990, and 1991 CR 125 compared: the first HPP power valve and first inverted Showa forks on a CR125, 6-speed, disc brakes.',
   },
   'mxa-review': {
-    title: "Kiedrowski's Factory Honda CR125: MXA Test | CR 125 Revival",
+    title: "Kiedrowski's 1990 Factory CR125: MXA Test | CR 125 Revival",
     description:
       "Motocross Action's retro test of Mike Kiedrowski's factory 1990 Honda CR125, the bike he raced to the 125cc National title, versus the stock CR 125.",
   },
   'show-gallery': {
-    title: 'Honda CR125 at the 125 Dream Race | CR 125 Revival',
+    title: '1990 Honda CR125 at the 125 Dream Race | CR 125 Revival',
     description:
       'Visitor photos with a restored 1990 Honda CR125 at the 125 Dream Race, Washougal MX: the CR 125 Revival show gallery.',
   },
