@@ -321,7 +321,7 @@ export default function ShowGallery() {
                 />
                 <CardContent>
                   {item.name && (
-                    <Typography variant="overline" sx={{ color: 'error.main', fontWeight: 700, display: 'block' }}>
+                    <Typography variant="overline" sx={{ color: 'error.light', fontWeight: 700, display: 'block' }}>
                       {item.name}
                     </Typography>
                   )}

@@ -115,7 +115,7 @@ export default function RunningVideo() {
           href={`https://www.youtube.com/shorts/${VIDEO_ID}`}
           target="_blank"
           rel="noopener noreferrer"
-          sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+          sx={{ color: 'text.secondary', '&:hover': { color: 'error.light' } }}
         >
           Watch on YouTube ↗
         </Box>

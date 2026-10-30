@@ -20,7 +20,13 @@ const theme = createTheme({
       main: '#cc0000',
     },
     error: {
+      // Honda red, for fills: buttons, the 1990 card header, borders.
+      // White text on it is 5.9:1, which passes WCAG AA.
       main: '#cc0000',
+      // Red *text* on the dark background. #cc0000 text is only ~3:1 there
+      // (AA needs 4.5:1 for small text); this lighter red is 5.4:1 on the
+      // page and 5.0:1 on cards. Use `error.light` for any red lettering.
+      light: '#ff3d3d',
     },
     background: {
       default: '#111111',

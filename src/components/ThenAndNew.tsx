@@ -57,7 +57,7 @@ export default function ThenAndNew() {
           <CardContent sx={{ bgcolor: 'background.paper' }}>
             <Typography
               variant="overline"
-              sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block' }}
+              sx={{ color: 'error.light', fontWeight: 700, letterSpacing: 2, display: 'block' }}
             >
               1990 · From the factory
             </Typography>
@@ -83,7 +83,7 @@ export default function ThenAndNew() {
           <CardContent>
             <Typography
               variant="overline"
-              sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block' }}
+              sx={{ color: 'error.light', fontWeight: 700, letterSpacing: 2, display: 'block' }}
             >
               2025 · After restoration
             </Typography>

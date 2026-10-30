@@ -10,6 +10,7 @@ import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import type { TabId } from '../tabs';
 import { responsiveImage } from '../responsiveImage';
+import PhotoButton from './PhotoButton';
 
 const QUILTED_PATTERN = [2, 1, 1, 2, 2];
 const EVEN_PATTERN = [2, 2];
@@ -143,19 +144,15 @@ export default function Gallery({ activeTab }: GalleryProps) {
             // way.
             const sizes = `(max-width: 600px) 100vw, ${itemCols >= 2 ? '600px' : '300px'}`;
             return (
-              <ImageListItem
-                key={src}
-                cols={itemCols}
-                rows={photoRows(photo)}
-                onClick={() => setLightboxIndex(i)}
-                sx={{ cursor: 'pointer', '&:hover img': { opacity: 0.85, transition: 'opacity 0.2s' } }}
-              >
-                <img
-                  {...responsiveImage(src, sizes)}
-                  alt={`${section.altPrefix}, photo ${i + 1}`}
-                  loading="lazy"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 4 }}
-                />
+              <ImageListItem key={src} cols={itemCols} rows={photoRows(photo)}>
+                <PhotoButton onClick={() => setLightboxIndex(i)}>
+                  <img
+                    {...responsiveImage(src, sizes)}
+                    alt={`${section.altPrefix}, photo ${i + 1}`}
+                    loading="lazy"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 4 }}
+                  />
+                </PhotoButton>
               </ImageListItem>
             );
           })}

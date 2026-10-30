@@ -52,7 +52,7 @@ export default function PartsReplaced() {
                   variant="overline"
                   component="h3"
                   sx={{
-                    color: 'error.main',
+                    color: 'error.light',
                     fontWeight: 700,
                     letterSpacing: 2,
                     display: 'block',

@@ -10,6 +10,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
 import { srcSetProps } from '../responsiveImage';
+import PhotoButton from './PhotoButton';
 
 /*
  * Facts here are checked against the MXA article and the AMA record:
@@ -51,17 +52,19 @@ const mxaPhotos = [
 
 // Every gallery image here sits in a box with an explicit height from `sx`,
 // so the layout is already reserved — srcset/sizes just stop a phone from
-// downloading a 2048px scan to fill a 180px-tall tile.
-const clickableImg = (src: string, alt: string, sizes: string, sx: object, onClick: () => void) => (
-  <Box
-    key={src}
-    component="img"
-    {...srcSetProps(src, sizes)}
-    alt={alt}
-    loading="lazy"
-    onClick={onClick}
-    sx={{ cursor: 'pointer', '&:hover': { opacity: 0.85, transition: 'opacity 0.2s' }, ...sx }}
-  />
+// downloading a 2048px scan to fill a 180px-tall tile. Each image sits in a
+// PhotoButton so it opens from the keyboard as well as by click or tap.
+const clickableImg = (
+  src: string,
+  alt: string,
+  sizes: string,
+  sx: object,
+  onClick: () => void,
+  wrapperSx: object = {},
+) => (
+  <PhotoButton key={src} onClick={onClick} sx={wrapperSx}>
+    <Box component="img" {...srcSetProps(src, sizes)} alt={alt} loading="lazy" sx={sx} />
+  </PhotoButton>
 );
 
 export default function MXAReview() {
@@ -75,7 +78,7 @@ export default function MXAReview() {
         <Container maxWidth="md">
 
           {/* Header */}
-          <Typography variant="overline" color="error.main" fontWeight={700} letterSpacing={2}>
+          <Typography variant="overline" color="error.light" fontWeight={700} letterSpacing={2}>
             MXA Retro Test
           </Typography>
           <Typography variant="h4" component="h2" fontWeight={700} sx={{ mt: 1, mb: 1 }}>
@@ -88,7 +91,7 @@ export default function MXAReview() {
           {/* Tags */}
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mb: 4 }}>
             {tags.map((tag) => (
-              <Chip key={tag} label={tag} size="small" variant="outlined" color="error" />
+              <Chip key={tag} label={tag} size="small" variant="outlined" sx={{ color: 'error.light', borderColor: 'error.light' }} />
             ))}
           </Box>
 
@@ -119,7 +122,7 @@ export default function MXAReview() {
               <Paper key={item.label} variant="outlined" sx={{ p: 3, display: 'flex', gap: 2, alignItems: 'flex-start' }}>
                 <Typography
                   variant="overline"
-                  color="error.main"
+                  color="error.light"
                   fontWeight={700}
                   sx={{ whiteSpace: 'nowrap', pt: 0.3 }}
                 >
@@ -190,8 +193,9 @@ export default function MXAReview() {
             '/photos/MXA/Retro_7_e-scaled.jpg',
             'Kiedrowski railing a corner on the factory CR125',
             '(max-width: 1200px) 100vw, 1200px',
-            { width: '100%', height: { xs: 240, sm: 380, md: 480 }, objectFit: 'cover', objectPosition: 'center 30%', borderRadius: 2, display: 'block', mb: 1.5 },
+            { width: '100%', height: { xs: 240, sm: 380, md: 480 }, objectFit: 'cover', objectPosition: 'center 30%', borderRadius: 2, display: 'block' },
             () => setLightboxIndex(0),
+            { mb: 1.5 },
           )}
 
           {/* Row 2 — Three portrait detail shots */}

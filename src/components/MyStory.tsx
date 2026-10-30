@@ -42,8 +42,9 @@ export default function MyStory() {
           <Typography variant="body1" paragraph>
             It made its public debut at the 125 Dream Race Show and Shine at Washougal MX, where
             Seth Enslow picked it as his bike of choice. Standing next to it that day — seeing how
-            new it still looks, how cleanly it runs — is something I won't forget. This August it
-            goes back to Washougal for the 15th Annual 125 Dream Race.
+            new it still looks, how cleanly it runs — is something I won't forget. In August 2026 it
+            went back to Washougal for the 15th Annual 125 Dream Race, and it will be back again for
+            the 16th in 2027.
           </Typography>
           <Typography variant="body1" sx={{ fontStyle: 'italic', color: 'text.secondary' }}>
             Some circles take thirty years to close.

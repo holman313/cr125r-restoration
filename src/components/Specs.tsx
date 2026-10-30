@@ -83,7 +83,7 @@ function WhyNinety() {
       <Typography
         variant="overline"
         component="h3"
-        sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block', m: 0, mb: 1 }}
+        sx={{ color: 'error.light', fontWeight: 700, letterSpacing: 2, display: 'block', m: 0, mb: 1 }}
       >
         Why 1990 Matters
       </Typography>
@@ -173,7 +173,7 @@ export default function Specs() {
               <Typography
                 variant="overline"
                 component="h3"
-                sx={{ color: 'error.main', fontWeight: 700, letterSpacing: 2, display: 'block', m: 0, mb: 2 }}
+                sx={{ color: 'error.light', fontWeight: 700, letterSpacing: 2, display: 'block', m: 0, mb: 2 }}
               >
                 {group.heading}
               </Typography>

@@ -52,7 +52,7 @@ export default function OriginalListing() {
               gap: 2,
             }}
           >
-            <Typography variant="overline" color="error.main" fontWeight={700} letterSpacing={2}>
+            <Typography variant="overline" color="error.light" fontWeight={700} letterSpacing={2}>
               Seller's Description
             </Typography>
             <Typography variant="body1">
