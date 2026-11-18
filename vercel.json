@@ -435,17 +435,17 @@
     },
     {
       "source": "/photos/finished/IMG_0372.jpeg",
-      "destination": "/photos/finished/1990-honda-cr125-trackside-photo.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow.jpeg",
       "permanent": true
     },
     {
       "source": "/photos/finished/IMG_0372-w1000.jpeg",
-      "destination": "/photos/finished/1990-honda-cr125-trackside-photo-w1000.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow-w1000.jpeg",
       "permanent": true
     },
     {
       "source": "/photos/finished/IMG_0372-w480.jpeg",
-      "destination": "/photos/finished/1990-honda-cr125-trackside-photo-w480.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow-w480.jpeg",
       "permanent": true
     },
     {
@@ -546,6 +546,21 @@
     {
       "source": "/photos/MXA/Retro_8_e-scaled-w480.jpg",
       "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/1990-honda-cr125-trackside-photo.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/1990-honda-cr125-trackside-photo-w480.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow-w480.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/1990-honda-cr125-trackside-photo-w1000.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-seth-enslow-w1000.jpeg",
       "permanent": true
     }
   ]

@@ -20,10 +20,12 @@ const MOBILE_PATTERN = [2, 2];
  * A plain path fills a standard one-row tile. Portrait photos need `rows: 2`,
  * or the fixed row height crops them to a thin horizontal band.
  */
-type GalleryPhoto = string | { src: string; rows: number };
+type GalleryPhoto = string | { src: string; rows?: number; alt?: string };
 
 const photoSrc = (photo: GalleryPhoto) => (typeof photo === 'string' ? photo : photo.src);
-const photoRows = (photo: GalleryPhoto) => (typeof photo === 'string' ? 1 : photo.rows);
+const photoRows = (photo: GalleryPhoto) => (typeof photo === 'string' ? 1 : (photo.rows ?? 1));
+/** A photo-specific alt text, or undefined to use the section's generic one. */
+const photoAlt = (photo: GalleryPhoto) => (typeof photo === 'string' ? undefined : photo.alt);
 
 interface GallerySection {
   id: TabId;
@@ -102,7 +104,10 @@ const sections: GallerySection[] = [
       '/photos/finished/1990-honda-cr125-125-dream-race-paddock.jpg',
       '/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine.jpg',
       '/photos/finished/1990-honda-cr125-restored-indoor-display.jpg',
-      '/photos/finished/1990-honda-cr125-trackside-photo.jpeg',
+      {
+        src: '/photos/finished/1990-honda-cr125-seth-enslow.jpeg',
+        alt: 'Seth Enslow with the restored 1990 Honda CR125',
+      },
     ],
   },
 ];
@@ -148,7 +153,7 @@ export default function Gallery({ activeTab }: GalleryProps) {
                 <PhotoButton onClick={() => setLightboxIndex(i)}>
                   <img
                     {...responsiveImage(src, sizes)}
-                    alt={`${section.altPrefix}, photo ${i + 1}`}
+                    alt={photoAlt(photo) ?? `${section.altPrefix}, photo ${i + 1}`}
                     loading="lazy"
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', borderRadius: 4 }}
                   />
