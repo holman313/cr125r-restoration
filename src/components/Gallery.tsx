@@ -105,8 +105,8 @@ const sections: GallerySection[] = [
       '/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine.jpg',
       '/photos/finished/1990-honda-cr125-restored-indoor-display.jpg',
       {
-        src: '/photos/finished/1990-honda-cr125-seth-enslow.jpeg',
-        alt: 'Seth Enslow with the restored 1990 Honda CR125',
+        src: '/photos/finished/seth-enslow.jpeg',
+        alt: 'Seth Enslow',
       },
     ],
   },

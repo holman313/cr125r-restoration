@@ -226,7 +226,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/1990-honda-cr125-seth-enslow.jpeg": {
+  "/photos/finished/seth-enslow.jpeg": {
     "w": 2000,
     "h": 1500,
     "widths": [
