@@ -42,12 +42,12 @@ const highlights = [
 const tags = ['1990 Honda CR125', 'Factory Bike', 'Mike Kiedrowski', 'MXA Retro Test', '1989 125cc National Champion'];
 
 const mxaPhotos = [
-  { src: '/photos/MXA/Retro_7_e-scaled.jpg' },
-  { src: '/photos/MXA/Retro_2_e-1170x1536.jpeg' },
-  { src: '/photos/MXA/Retro_4_e-scaled.jpg' },
-  { src: '/photos/MXA/Retro_5_e-1148x1536.jpeg' },
-  { src: '/photos/MXA/Retro_1_e-scaled.jpg' },
-  { src: '/photos/MXA/Retro_8_e-scaled.jpg' },
+  { src: '/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering.jpg' },
+  { src: '/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe.jpeg' },
+  { src: '/photos/MXA/mxa-factory-honda-cr125-showa-fork.jpg' },
+  { src: '/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar.jpeg' },
+  { src: '/photos/MXA/mxa-factory-honda-cr125-on-stand.jpg' },
+  { src: '/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump.jpg' },
 ];
 
 // Every gallery image here sits in a box with an explicit height from `sx`,
@@ -190,7 +190,7 @@ export default function MXAReview() {
 
           {/* Row 1 — Full-width action hero */}
           {clickableImg(
-            '/photos/MXA/Retro_7_e-scaled.jpg',
+            '/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering.jpg',
             'Kiedrowski railing a corner on the factory CR125',
             '(max-width: 1200px) 100vw, 1200px',
             { width: '100%', height: { xs: 240, sm: 380, md: 480 }, objectFit: 'cover', objectPosition: 'center 30%', borderRadius: 2, display: 'block' },
@@ -201,9 +201,9 @@ export default function MXAReview() {
           {/* Row 2 — Three portrait detail shots */}
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr 1fr', md: '1fr 1fr 1fr' }, gap: 1.5, mb: 1.5 }}>
             {[
-              { src: '/photos/MXA/Retro_2_e-1170x1536.jpeg', alt: 'HRC engine and exhaust detail', idx: 1 },
-              { src: '/photos/MXA/Retro_4_e-scaled.jpg',     alt: 'Showa inverted fork detail',    idx: 2 },
-              { src: '/photos/MXA/Retro_5_e-1148x1536.jpeg', alt: 'Handlebar and steering detail', idx: 3 },
+              { src: '/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe.jpeg', alt: 'HRC engine and exhaust detail', idx: 1 },
+              { src: '/photos/MXA/mxa-factory-honda-cr125-showa-fork.jpg',     alt: 'Showa inverted fork detail',    idx: 2 },
+              { src: '/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar.jpeg', alt: 'Gas cap and Renthal handlebar detail', idx: 3 },
             ].map((img) =>
               clickableImg(img.src, img.alt, '(max-width: 900px) 50vw, 400px', { width: '100%', height: { xs: 180, sm: 260, md: 340 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
             )}
@@ -212,8 +212,8 @@ export default function MXAReview() {
           {/* Row 3 — Static bike + jump shot */}
           <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: '3fr 2fr' }, gap: 1.5 }}>
             {[
-              { src: '/photos/MXA/Retro_1_e-scaled.jpg', alt: 'Factory CR125 on a stand — full profile', idx: 4 },
-              { src: '/photos/MXA/Retro_8_e-scaled.jpg', alt: 'Kiedrowski launching off a jump',         idx: 5 },
+              { src: '/photos/MXA/mxa-factory-honda-cr125-on-stand.jpg', alt: 'Factory CR125 on a stand — full profile', idx: 4 },
+              { src: '/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump.jpg', alt: 'Kiedrowski launching off a jump',         idx: 5 },
             ].map((img) =>
               clickableImg(img.src, img.alt, '(max-width: 600px) 100vw, 700px', { width: '100%', height: { xs: 220, sm: 300, md: 360 }, objectFit: 'cover', objectPosition: 'center', borderRadius: 2, display: 'block' }, () => setLightboxIndex(img.idx))
             )}

@@ -11,7 +11,7 @@ export interface PhotoMeta {
 }
 
 export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
-  "/photos/as-found/20250708_173939.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-chain-side.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -20,7 +20,31 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/as-found/20250708_173953.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-fmf-silencer.jpg": {
+    "w": 960,
+    "h": 720,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/photos/as-found/1990-honda-cr125-as-found-frame-underside.jpg": {
+    "w": 960,
+    "h": 720,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/photos/as-found/1990-honda-cr125-as-found-original-exhaust-pipe.jpg": {
+    "w": 960,
+    "h": 720,
+    "widths": [
+      480,
+      960
+    ]
+  },
+  "/photos/as-found/1990-honda-cr125-as-found-pipe-side.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -29,7 +53,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/as-found/511550695_705881208746655_7654873925645486782_n.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-rear-tire-chain.jpg": {
     "w": 960,
     "h": 720,
     "widths": [
@@ -37,7 +61,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       960
     ]
   },
-  "/photos/as-found/511691016_727930883073436_2255052552686165886_n.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-seat-side-panel.jpg": {
     "w": 960,
     "h": 720,
     "widths": [
@@ -45,7 +69,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       960
     ]
   },
-  "/photos/as-found/511853656_726849399726159_726664144942546534_n.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-seller-photo.jpg": {
     "w": 960,
     "h": 720,
     "widths": [
@@ -53,7 +77,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       960
     ]
   },
-  "/photos/as-found/512014606_1421811542282879_4787133338647080129_n.jpg": {
+  "/photos/as-found/1990-honda-cr125-as-found-swingarm-125r-decal.jpg": {
     "w": 960,
     "h": 720,
     "widths": [
@@ -61,31 +85,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       960
     ]
   },
-  "/photos/as-found/512111523_998182165724339_3908359442190371356_n.jpg": {
-    "w": 960,
-    "h": 720,
-    "widths": [
-      480,
-      960
-    ]
-  },
-  "/photos/as-found/512562778_1253709202951492_3420004356951000960_n.jpg": {
-    "w": 960,
-    "h": 720,
-    "widths": [
-      480,
-      960
-    ]
-  },
-  "/photos/as-found/512574166_1247098590212931_8903988289943527610_n.jpg": {
-    "w": 960,
-    "h": 720,
-    "widths": [
-      480,
-      960
-    ]
-  },
-  "/photos/factory/1990-cr125r-factory.jpg": {
+  "/photos/factory/1990-honda-cr125r-factory-photo.jpg": {
     "w": 915,
     "h": 562,
     "widths": [
@@ -93,7 +93,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       915
     ]
   },
-  "/photos/finished/20250821_153620.jpg": {
+  "/photos/finished/1990-honda-cr125-125-dream-race-paddock.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -102,7 +102,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/20250823_112313.jpg": {
+  "/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -111,7 +111,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/20250823_145657.jpg": {
+  "/photos/finished/1990-honda-cr125-restored-chain-side.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -120,7 +120,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/20251018_135845.jpg": {
+  "/photos/finished/1990-honda-cr125-restored-cockpit.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -129,7 +129,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/detail-cockpit.jpg": {
+  "/photos/finished/1990-honda-cr125-restored-engine-pipe-detail.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -138,43 +138,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/detail-engine-hpp.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/detail-engine-pipe.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/detail-seat-pipe.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/detail-shroud-left.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/front-on.jpg": {
+  "/photos/finished/1990-honda-cr125-restored-front.jpg": {
     "w": 924,
     "h": 2000,
     "widths": [
@@ -182,7 +146,87 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       924
     ]
   },
-  "/photos/finished/IMG_0372.jpeg": {
+  "/photos/finished/1990-honda-cr125-restored-hpp-engine-detail.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-indoor-display.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-pipe-side.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-pro-circuit-silencer.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-rear.jpg": {
+    "w": 924,
+    "h": 2000,
+    "widths": [
+      480,
+      924
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-seat-pipe-detail.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-shroud-detail.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-three-quarter-front.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-restored-three-quarter-rear.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/finished/1990-honda-cr125-trackside-photo.jpeg": {
     "w": 2000,
     "h": 1500,
     "widths": [
@@ -191,78 +235,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/finished/profile-chain-side.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/profile-pipe-side.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/rear-on.jpg": {
-    "w": 924,
-    "h": 2000,
-    "widths": [
-      480,
-      924
-    ]
-  },
-  "/photos/finished/three-quarter-front.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/finished/three-quarter-rear.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/MXA/Retro_1_e-scaled.jpg": {
-    "w": 2048,
-    "h": 1388,
-    "widths": [
-      480,
-      1000,
-      2048
-    ]
-  },
-  "/photos/MXA/Retro_2_e-1170x1536.jpeg": {
-    "w": 1170,
-    "h": 1536,
-    "widths": [
-      480,
-      1000,
-      1170
-    ]
-  },
-  "/photos/MXA/Retro_4_e-scaled.jpg": {
-    "w": 1388,
-    "h": 2048,
-    "widths": [
-      480,
-      1000,
-      1388
-    ]
-  },
-  "/photos/MXA/Retro_5_e-1148x1536.jpeg": {
+  "/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar.jpeg": {
     "w": 1148,
     "h": 1536,
     "widths": [
@@ -271,7 +244,34 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       1148
     ]
   },
-  "/photos/MXA/Retro_7_e-scaled.jpg": {
+  "/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe.jpeg": {
+    "w": 1170,
+    "h": 1536,
+    "widths": [
+      480,
+      1000,
+      1170
+    ]
+  },
+  "/photos/MXA/mxa-factory-honda-cr125-on-stand.jpg": {
+    "w": 2048,
+    "h": 1388,
+    "widths": [
+      480,
+      1000,
+      2048
+    ]
+  },
+  "/photos/MXA/mxa-factory-honda-cr125-showa-fork.jpg": {
+    "w": 1388,
+    "h": 2048,
+    "widths": [
+      480,
+      1000,
+      1388
+    ]
+  },
+  "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering.jpg": {
     "w": 2048,
     "h": 1366,
     "widths": [
@@ -280,7 +280,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2048
     ]
   },
-  "/photos/MXA/Retro_8_e-scaled.jpg": {
+  "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump.jpg": {
     "w": 1357,
     "h": 2048,
     "widths": [
@@ -289,7 +289,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       1357
     ]
   },
-  "/photos/restoration/20250712_163005.jpg": {
+  "/photos/restoration/1990-honda-cr125-restoration-313-number-plates.jpg": {
     "w": 2000,
     "h": 924,
     "widths": [
@@ -298,43 +298,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       2000
     ]
   },
-  "/photos/restoration/20250719_140016.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/restoration/20250719_191631.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/restoration/20250719_191637.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/restoration/20250727_180742.jpg": {
-    "w": 2000,
-    "h": 924,
-    "widths": [
-      480,
-      1000,
-      2000
-    ]
-  },
-  "/photos/restoration/pipe-refinished-detail.jpg": {
+  "/photos/restoration/1990-honda-cr125-restoration-dunlop-tires.jpg": {
     "w": 924,
     "h": 2000,
     "widths": [
@@ -342,7 +306,16 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       924
     ]
   },
-  "/photos/restoration/pipe-refinished.jpg": {
+  "/photos/restoration/1990-honda-cr125-restoration-in-the-garage.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/restoration/1990-honda-cr125-restoration-new-sprockets.jpg": {
     "w": 924,
     "h": 2000,
     "widths": [
@@ -350,7 +323,7 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       924
     ]
   },
-  "/photos/restoration/sprockets.jpg": {
+  "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished-detail.jpg": {
     "w": 924,
     "h": 2000,
     "widths": [
@@ -358,12 +331,39 @@ export const PHOTO_MANIFEST: Record<string, PhotoMeta> = {
       924
     ]
   },
-  "/photos/restoration/tires-dunlop.jpg": {
+  "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished.jpg": {
     "w": 924,
     "h": 2000,
     "widths": [
       480,
       924
+    ]
+  },
+  "/photos/restoration/1990-honda-cr125-restoration-rear-suspension-removed.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/restoration/1990-honda-cr125-restoration-swingarm-decal-cleaned.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
+    ]
+  },
+  "/photos/restoration/1990-honda-cr125-restoration-swingarm-shock-linkage.jpg": {
+    "w": 2000,
+    "h": 924,
+    "widths": [
+      480,
+      1000,
+      2000
     ]
   }
 };

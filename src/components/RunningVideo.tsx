@@ -20,7 +20,7 @@ import Typography from '@mui/material/Typography';
 const VIDEO_ID = 'iYM3gIppzAw';
 
 /** A photo of the bike, not a frame from the clip — it sets up the play button. */
-const POSTER = '/photos/finished/detail-engine-pipe.jpg';
+const POSTER = '/photos/finished/1990-honda-cr125-restored-engine-pipe-detail.jpg';
 
 export default function RunningVideo() {
   const [playing, setPlaying] = useState(false);

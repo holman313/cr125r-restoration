@@ -43,7 +43,7 @@ export default function ThenAndNew() {
         <Card variant="outlined" sx={{ bgcolor: '#fff' }}>
           <Box
             component="img"
-            {...srcSetProps('/photos/factory/1990-cr125r-factory.jpg', '(max-width: 600px) 100vw, 420px')}
+            {...srcSetProps('/photos/factory/1990-honda-cr125r-factory-photo.jpg', '(max-width: 600px) 100vw, 420px')}
             alt="Honda's factory studio photo of the 1990 CR125"
             loading="lazy"
             sx={{
@@ -70,7 +70,7 @@ export default function ThenAndNew() {
         <Card variant="outlined" sx={{ bgcolor: 'background.paper' }}>
           <Box
             component="img"
-            {...srcSetProps('/photos/finished/profile-pipe-side.jpg', '(max-width: 600px) 100vw, 420px')}
+            {...srcSetProps('/photos/finished/1990-honda-cr125-restored-pipe-side.jpg', '(max-width: 600px) 100vw, 420px')}
             alt="The same 1990 Honda CR 125 after restoration"
             loading="lazy"
             sx={{

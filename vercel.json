@@ -1,5 +1,552 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/photos/as-found/20250708_173939.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-chain-side.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/20250708_173939-w1000.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-chain-side-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/20250708_173939-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-chain-side-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/20250708_173953.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-pipe-side.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/20250708_173953-w1000.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-pipe-side-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/20250708_173953-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-pipe-side-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511550695_705881208746655_7654873925645486782_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-swingarm-125r-decal.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511550695_705881208746655_7654873925645486782_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-swingarm-125r-decal-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511691016_727930883073436_2255052552686165886_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-fmf-silencer.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511691016_727930883073436_2255052552686165886_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-fmf-silencer-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511853656_726849399726159_726664144942546534_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-original-exhaust-pipe.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/511853656_726849399726159_726664144942546534_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-original-exhaust-pipe-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512014606_1421811542282879_4787133338647080129_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-seller-photo.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512014606_1421811542282879_4787133338647080129_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-seller-photo-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512111523_998182165724339_3908359442190371356_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-seat-side-panel.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512111523_998182165724339_3908359442190371356_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-seat-side-panel-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512562778_1253709202951492_3420004356951000960_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-rear-tire-chain.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512562778_1253709202951492_3420004356951000960_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-rear-tire-chain-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512574166_1247098590212931_8903988289943527610_n.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-frame-underside.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/as-found/512574166_1247098590212931_8903988289943527610_n-w480.jpg",
+      "destination": "/photos/as-found/1990-honda-cr125-as-found-frame-underside-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250712_163005.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-decal-cleaned.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250712_163005-w1000.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-decal-cleaned-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250712_163005-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-decal-cleaned-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_140016.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-in-the-garage.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_140016-w1000.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-in-the-garage-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_140016-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-in-the-garage-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191631.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-rear-suspension-removed.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191631-w1000.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-rear-suspension-removed-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191631-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-rear-suspension-removed-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191637.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-shock-linkage.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191637-w1000.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-shock-linkage-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250719_191637-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-swingarm-shock-linkage-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250727_180742.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-313-number-plates.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250727_180742-w1000.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-313-number-plates-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/20250727_180742-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-313-number-plates-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/pipe-refinished.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/pipe-refinished-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/pipe-refinished-detail.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished-detail.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/pipe-refinished-detail-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-pipe-refinished-detail-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/tires-dunlop.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-dunlop-tires.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/tires-dunlop-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-dunlop-tires-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/sprockets.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-new-sprockets.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/restoration/sprockets-w480.jpg",
+      "destination": "/photos/restoration/1990-honda-cr125-restoration-new-sprockets-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-chain-side.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-chain-side.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-chain-side-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-chain-side-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-chain-side-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-chain-side-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-pipe-side.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pipe-side.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-pipe-side-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pipe-side-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/profile-pipe-side-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pipe-side-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-front.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-front.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-front-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-front-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-front-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-front-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-rear.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-rear.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-rear-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-rear-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/three-quarter-rear-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-three-quarter-rear-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/front-on.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-front.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/front-on-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-front-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/rear-on.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-rear.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/rear-on-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-rear-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-shroud-left.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-shroud-detail.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-shroud-left-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-shroud-detail-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-shroud-left-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-shroud-detail-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-seat-pipe.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-seat-pipe-detail.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-seat-pipe-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-seat-pipe-detail-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-seat-pipe-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-seat-pipe-detail-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-hpp.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-hpp-engine-detail.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-hpp-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-hpp-engine-detail-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-hpp-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-hpp-engine-detail-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-pipe.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-engine-pipe-detail.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-pipe-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-engine-pipe-detail-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-engine-pipe-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-engine-pipe-detail-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-cockpit.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-cockpit.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-cockpit-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-cockpit-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/detail-cockpit-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-cockpit-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250821_153620.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pro-circuit-silencer.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250821_153620-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pro-circuit-silencer-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250821_153620-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-pro-circuit-silencer-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_112313.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-paddock.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_112313-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-paddock-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_112313-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-paddock-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_145657.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_145657-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20250823_145657-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-125-dream-race-show-and-shine-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20251018_135845.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-indoor-display.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20251018_135845-w1000.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-indoor-display-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/20251018_135845-w480.jpg",
+      "destination": "/photos/finished/1990-honda-cr125-restored-indoor-display-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/IMG_0372.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-trackside-photo.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/IMG_0372-w1000.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-trackside-photo-w1000.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/finished/IMG_0372-w480.jpeg",
+      "destination": "/photos/finished/1990-honda-cr125-trackside-photo-w480.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/factory/1990-cr125r-factory.jpg",
+      "destination": "/photos/factory/1990-honda-cr125r-factory-photo.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/factory/1990-cr125r-factory-w480.jpg",
+      "destination": "/photos/factory/1990-honda-cr125r-factory-photo-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_7_e-scaled.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_7_e-scaled-w1000.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_7_e-scaled-w480.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-cornering-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_2_e-1170x1536.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_2_e-1170x1536-w1000.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe-w1000.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_2_e-1170x1536-w480.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-hrc-engine-pipe-w480.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_4_e-scaled.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-showa-fork.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_4_e-scaled-w1000.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-showa-fork-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_4_e-scaled-w480.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-showa-fork-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_5_e-1148x1536.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_5_e-1148x1536-w1000.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar-w1000.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_5_e-1148x1536-w480.jpeg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-gas-cap-handlebar-w480.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_1_e-scaled.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-on-stand.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_1_e-scaled-w1000.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-on-stand-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_1_e-scaled-w480.jpg",
+      "destination": "/photos/MXA/mxa-factory-honda-cr125-on-stand-w480.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_8_e-scaled.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_8_e-scaled-w1000.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump-w1000.jpg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/MXA/Retro_8_e-scaled-w480.jpg",
+      "destination": "/photos/MXA/mxa-kiedrowski-factory-honda-cr125-jump-w480.jpg",
+      "permanent": true
+    }
+  ]
 }

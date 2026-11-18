@@ -76,7 +76,7 @@ rather than hashed by the bundler.
 public/photos/
 ├── as-found/      the bike as purchased, plus the listing screenshot
 ├── restoration/   work in progress
-├── finished/      completed bike — the Hero uses profile-pipe-side.jpg
+├── finished/      completed bike — the Hero uses 1990-honda-cr125-restored-pipe-side.jpg
 └── MXA/           scanned magazine pages for the MXA Review tab
 ```
 
@@ -100,7 +100,7 @@ and it also drives the lightbox order. The quilted layout repeats `colPattern` a
 changes the layout, not just the sequence. On mobile the grid drops to 2 columns with an even
 pattern.
 
-The hero photo is `public/photos/finished/profile-pipe-side.jpg`, set in
+The hero photo is `public/photos/finished/1990-honda-cr125-restored-pipe-side.jpg`, set in
 `src/components/Hero.tsx`. The favicon (`public/favicon.svg`) is wired up in `index.html`.
 
 ## Deploying

@@ -27,7 +27,7 @@ export default function OriginalListing() {
           {/* Screenshot */}
           <Box
             component="img"
-            src="/photos/as-found/Screenshot%202025-10-10%20105721.png"
+            src="/photos/as-found/1990-honda-cr125-marketplace-listing.png"
             alt="Original Facebook Marketplace listing"
             loading="lazy"
             sx={{
